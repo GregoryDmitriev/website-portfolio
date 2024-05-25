@@ -1,0 +1,9 @@
+@import '../../styles/index';
+
+.section {
+	@include display-flex;
+
+	.container {
+		@include container;
+	}
+}

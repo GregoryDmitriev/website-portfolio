@@ -1,0 +1,20 @@
+@import '../../styles/index';
+
+.sidebar {
+  @include display-flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100vh;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $gray-100;
+
+  .container {
+    @include container;
+    max-width: 100%;
+    padding: 0;
+    background-color: rgb(47, 139, 219);
+  }
+}
