@@ -1,1 +1,7 @@
 @import '../../../styles/index';
+
+.menu {
+	@include display-flex;
+	width: 100%;
+	height: 100%;
+}

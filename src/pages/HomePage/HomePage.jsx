@@ -2,7 +2,7 @@ import styles from './homePage.module.scss'
 
 const HomePage = () => {
 	return (
-		<section id='home' className={styles.section}>
+		<section id='home' className={styles.home}>
 			<div className={styles.container}>
 				<h1>Home</h1>
 				<p>lorem*20</p>

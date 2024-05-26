@@ -1,11 +1,23 @@
 const NAV_LINKS = [
 	{
 		title: 'Home',
-		path: '/',
+		to: '/#home',
 	},
 	{
 		title: 'About',
-		path: 'about',
+		to: '/#about',
+	},
+	{
+		title: 'Skills',
+		to: '/#skills',
+	},
+	{
+		title: 'Projects',
+		to: '/#projects',
+	},
+	{
+		title: 'Contact',
+		to: '/#contact',
 	},
 ]
 

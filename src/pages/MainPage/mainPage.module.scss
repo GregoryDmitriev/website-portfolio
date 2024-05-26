@@ -1,0 +1,13 @@
+@import '../../styles/index';
+
+.main {
+	@include display-flex;
+	flex-direction: column;
+
+	&.dark {
+		@include dark-theme;
+	}
+	&.light {
+		@include light-theme;
+	}
+}

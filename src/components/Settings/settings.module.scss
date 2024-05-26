@@ -1,0 +1,56 @@
+@import '../../styles/index';
+
+.settings {
+	@include display-flex;
+	min-width: 30px;
+	min-height: 30px;
+	position: fixed;
+	top: 30px;
+	right: 20px;
+	z-index: 200;
+
+	.container {
+		@include container;
+		flex-direction: row;
+		padding: 0;
+
+		.iconSettings {
+			width: 25px;
+			height: 25px;
+			animation: rotate 2s linear infinite;
+
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
+			}
+
+			@keyframes rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		}
+
+		.btnSettings {
+			@include display-flex;
+			position: absolute;
+			right: 40px;
+			padding: 10px;
+			border-radius: 20px;
+
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
+			}
+		}
+	}
+}

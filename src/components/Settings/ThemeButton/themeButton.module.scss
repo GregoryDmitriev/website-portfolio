@@ -1,0 +1,11 @@
+@import '../../../styles/index';
+
+.themeButton {
+	@include display-flex;
+	padding-left: 20px;
+
+	svg {
+		width: 25px;
+		height: 25px;
+	}
+}

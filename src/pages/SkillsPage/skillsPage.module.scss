@@ -1,9 +1,9 @@
 @import '../../styles/index';
 
-.about {
-	@include section;
+.skills {
+  @include section;
 
-	.container {
+  .container {
 		@include container;
 	}
 }

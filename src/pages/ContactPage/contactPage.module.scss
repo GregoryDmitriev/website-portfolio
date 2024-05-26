@@ -1,0 +1,9 @@
+@import '../../styles/index';
+
+.contact {
+  @include section;
+
+  .container {  
+    @include container;
+  }
+}

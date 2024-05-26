@@ -9,6 +9,7 @@
 	@include display-flex;
 	flex-direction: column;
 	width: 100%;
+	height: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -18,6 +19,16 @@
 	@include display-flex;
 	width: 100vw;
 	height: 100vh;
-	background: $gray-200;
-	border: 1px solid;
+}
+
+@mixin dark-theme {
+	background: $bg-dark;
+	color: $font-white;
+	fill: $font-white;
+}
+
+@mixin light-theme {
+	background: $bg-light;
+	color: $font-black;
+	fill: $font-black;
 }

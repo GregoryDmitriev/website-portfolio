@@ -1,0 +1,9 @@
+@import '../../styles/index';
+
+.projects {
+  @include section;
+
+  .container {
+    @include container;
+  }
+}

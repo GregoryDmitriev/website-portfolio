@@ -1,7 +1,7 @@
 @import '../../styles/index';
 
-.section {
-	@include display-flex;
+.home {
+	@include section;
 
 	.container {
 		@include container;
