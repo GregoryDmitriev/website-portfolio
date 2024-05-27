@@ -1,5 +1,9 @@
 @import '../../../styles/index';
 
 .languageButton {
-  @include display-flex;
+	@include display-flex;
+
+	p {
+		cursor: pointer;
+	}
 }

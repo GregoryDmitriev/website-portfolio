@@ -2,6 +2,9 @@
 
 .settings {
 	@include display-flex;
+	@include font;
+	
+	font-size: 1.2rem;
 	min-width: 30px;
 	min-height: 30px;
 	position: fixed;
@@ -11,6 +14,7 @@
 
 	.container {
 		@include container;
+
 		flex-direction: row;
 		padding: 0;
 
@@ -39,6 +43,7 @@
 
 		.btnSettings {
 			@include display-flex;
+
 			position: absolute;
 			right: 40px;
 			padding: 10px;
@@ -50,6 +55,13 @@
 
 			&.light {
 				@include light-theme;
+			}
+
+			p,
+			svg {
+				&:hover {
+					color: $hover-color;
+				}
 			}
 		}
 	}

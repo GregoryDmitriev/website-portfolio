@@ -14,6 +14,8 @@ import { ThemeContext } from '../../providers/Theme'
 const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
 
+	const styleTheme = theme === 'light' ? styles.light : styles.dark
+
 	// scroll to hash
 	const { hash } = useLocation()
 
@@ -27,11 +29,7 @@ const MainPage = () => {
 	}, [hash])
 
 	return (
-		<main
-			className={`${styles.main} ${
-				theme === 'light' ? styles.light : styles.dark
-			} `}
-		>
+		<main className={`${styles.main} ${styleTheme} `}>
 			<HomePage />
 			<AboutPage />
 			<SkillsPage />

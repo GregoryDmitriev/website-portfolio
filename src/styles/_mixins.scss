@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
 @mixin display-flex {
 	display: flex;
 	flex-direction: row;
@@ -31,4 +33,12 @@
 	background: $bg-light;
 	color: $font-black;
 	fill: $font-black;
+}
+
+@mixin font {
+	font-family: 'Saira', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
 }

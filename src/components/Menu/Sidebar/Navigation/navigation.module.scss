@@ -1,0 +1,42 @@
+@import '../../../../styles/index';
+
+.navigation {
+	@include display-flex;
+
+	align-items: flex-start;
+	width: 100%;
+	height: 50%;
+	padding-right: 4rem;
+
+	ul {			
+		padding-top: 2rem;
+	}
+
+	ul > li {
+		padding: 10px 0;
+
+		a {
+			@include display-flex;
+			@include font;
+			
+			justify-content: flex-start;
+			font-size: 1.2rem;
+
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
+			}
+
+			&:hover {
+				color: $hover-color;
+			}
+
+			svg {
+				margin-right: 1rem;
+			}
+		}
+	}
+}

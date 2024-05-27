@@ -11,7 +11,7 @@ const LanguageButton = () => {
 
 	return (
 		<div className={styles.languageButton} onClick={handleClick}>
-			<a href='#'> {language} </a>
+			<p>{language}</p>
 		</div>
 	)
 }

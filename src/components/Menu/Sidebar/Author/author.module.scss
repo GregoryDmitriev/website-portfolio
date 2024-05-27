@@ -1,0 +1,22 @@
+@import '../../../../styles/index';
+
+.author {
+	@include display-flex;
+
+	width: 100%;
+	height: 50%;
+	border-bottom: 1px solid;
+
+	.container {
+		@include container;
+
+		height: 70%;
+
+		.imgContainer {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border: 1px solid;
+		}
+	}
+}
