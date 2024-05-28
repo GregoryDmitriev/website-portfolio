@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom'
 import { FaHome } from 'react-icons/fa'
 
 import styles from './burger.module.scss'
-import { ThemeContext } from '../../../providers/Theme'
+import { ThemeContext } from '../../../providers/ThemeProvider/index'
 import { NAV_LINKS_BURGER } from '../../../constants/index'
 
 const Burger = () => {
 	const [theme] = useContext(ThemeContext)
-	const [activeStates, setActiveStates] = useState([false, false, false, false])
+	const [activeStates, setActiveStates] = useState([true, true, true, true])
 
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 

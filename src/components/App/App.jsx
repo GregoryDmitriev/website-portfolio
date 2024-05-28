@@ -4,11 +4,11 @@ import styles from './app.module.scss'
 import { Layout } from '../index'
 import { MainPage } from '../../pages/index'
 import { Settings } from '../Settings/Settings'
-import { Theme } from '../../providers/Theme'
+import { ThemeProvider } from '../../providers/index'
 
 const App = () => {
 	return (
-		<Theme>
+		<ThemeProvider>
 			<div className={styles.app}>
 				<Settings />
 				<Router>
@@ -19,7 +19,7 @@ const App = () => {
 					</Routes>
 				</Router>
 			</div>
-		</Theme>
+		</ThemeProvider>
 	)
 }
 

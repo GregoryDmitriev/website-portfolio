@@ -5,11 +5,23 @@
 
 	position: absolute;
 	left: 14.5rem;
-	border-radius: 100%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border: none;
 	width: 2rem;
 	height: 2rem;
+	overflow: hidden;
+	box-shadow: 10px 0 15px -5px $gray-300;
+	-webkit-box-shadow: 10px 0 15px -5px $gray-300;
+	-moz-box-shadow: 10px 0 15px -5px $gray-300;
+	transition: width 1s ease;
+	cursor: pointer;
 
-	box-shadow: 0px 0px 5px 0px $gray-300;
+	&.toggleButtonClosed {
+		left: 1rem;
+		top: 18rem;
+		transition: width 1s ease;
+	}
 
 	&.dark {
 		@include dark-theme;

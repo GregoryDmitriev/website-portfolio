@@ -2,21 +2,22 @@ import { useContext } from 'react'
 
 import styles from './sidebar.module.scss'
 import { Navigation, Author, ToggleButton } from '../../index'
-import { ThemeContext } from '../../../providers/Theme'
+import { ThemeContext, SidebarContext } from '../../../providers/index'
 
 const Sidebar = () => {
 	const [theme] = useContext(ThemeContext)
+	const { isClosed } = useContext(SidebarContext)
 
+	const sidebarWidth = isClosed ? styles.sidebarClosed : styles.sidebar
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	return (
-		<div className={`${styles.sidebar} ${styleTheme} `}>
+		<div className={`${styles.sidebar} ${styleTheme} ${sidebarWidth}`}>
 			<div className={styles.container}>
 				<Author />
 				<Navigation />
+				<ToggleButton />
 			</div>
-
-			<ToggleButton />
 		</div>
 	)
 }

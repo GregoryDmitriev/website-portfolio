@@ -5,7 +5,7 @@ import styles from './settings.module.scss'
 
 import { LanguageButton } from '../Settings/LanguageButton'
 import { ThemeButton } from '../Settings/ThemeButton'
-import { ThemeContext } from '../../providers/Theme'
+import { ThemeContext } from '../../providers/ThemeProvider/ThemeProvider'
 
 const Settings = () => {
 	const [open, setOpen] = useState(false)

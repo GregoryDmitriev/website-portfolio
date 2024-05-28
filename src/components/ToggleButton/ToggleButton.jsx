@@ -1,26 +1,28 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 import styles from './toggleButton.module.scss'
-import { ThemeContext } from '../../providers/Theme'
+import {
+	ThemeContext,
+	SidebarContext,
+} from '../../providers/index'
 
 const ToggleButton = () => {
+	const { isClosed, handleSidebar } = useContext(SidebarContext)
 	const [theme] = useContext(ThemeContext)
-	const [close, setClose] = useState(true)
-
-	const handleClick = e => {
-		e.preventDefault()
-		setClose(!close)
-	}
 
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	return (
 		<button
-			onClick={handleClick}
-			className={`${styles.toggleButton} ${styleTheme} `}
+			onClick={handleSidebar}
+			className={
+				!isClosed
+					? `${styles.toggleButton} ${styleTheme} `
+					: `${styles.toggleButton} ${styleTheme} ${styles.toggleButtonClosed}`
+			}
 		>
-			{close ? <IoIosArrowBack /> : <IoIosArrowForward />}
+			{isClosed ? <IoIosArrowBack /> : <IoIosArrowForward />}
 		</button>
 	)
 }

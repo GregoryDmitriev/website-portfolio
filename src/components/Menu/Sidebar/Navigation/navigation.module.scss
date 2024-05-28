@@ -8,17 +8,41 @@
 	height: 50%;
 	padding-right: 4rem;
 
-	ul {			
+	.sidebarList {
 		padding-top: 2rem;
 	}
 
-	ul > li {
+	.sidebarClosed {
+		position: absolute;
+		top: 22rem;
+		left: 1.2rem;
+		transition: width 1s ease;
+
+		li {
+			border-top-right-radius: 50%;
+			border-bottom-right-radius: 50%;
+			box-shadow: 10px 0 15px -5px $gray-300;
+			-webkit-box-shadow: 10px 0 15px -5px $gray-300;
+			-moz-box-shadow: 10px 0 15px -5px $gray-300;
+			margin: 1rem 0;
+
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
+			}
+		}
+	}
+
+	li {
 		padding: 10px 0;
 
 		a {
 			@include display-flex;
 			@include font;
-			
+
 			justify-content: flex-start;
 			font-size: 1.2rem;
 

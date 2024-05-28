@@ -3,7 +3,7 @@ import { GoSun } from 'react-icons/go'
 import { GiMoon } from 'react-icons/gi'
 
 import styles from './themeButton.module.scss'
-import { ThemeContext } from '../../../providers/Theme'
+import { ThemeContext } from '../../../providers/ThemeProvider/ThemeProvider'
 
 const ThemeButton = () => {
 	const [theme, setTheme] = useContext(ThemeContext)
