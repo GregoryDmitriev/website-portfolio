@@ -14,7 +14,7 @@ const Menu = () => {
 		const handleResize = () => {
 			if (window.innerWidth < 900 || window.innerHeight < 700) {
 				setOpen(true)
-				localStorage.setItem('menuOpen', shouldOpen)
+				localStorage.setItem('menuOpen', open)
 			} else {
 				setOpen(false)
 			}
