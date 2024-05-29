@@ -12,14 +12,11 @@ const Menu = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth < 900 || window.innerHeight < 700) {
-				setOpen(true)
-				localStorage.setItem('menuOpen', open)
-			} else {
-				setOpen(false)
-			}
+			const shouldOpen = window.innerWidth <= 900 || window.innerHeight <= 699
+			setOpen(shouldOpen)
 		}
 
+		handleResize()
 		window.addEventListener('resize', handleResize)
 
 		return () => {

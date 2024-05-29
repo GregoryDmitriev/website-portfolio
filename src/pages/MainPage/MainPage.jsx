@@ -9,12 +9,10 @@ import {
 	SkillsPage,
 	ContactPage,
 } from '../index'
-import { ThemeContext } from '../../providers/ThemeProvider/ThemeProvider'
+import { ThemeContext } from '../../providers/index'
 
 const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
-
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	// scroll to hash
 	const { hash } = useLocation()
@@ -28,8 +26,10 @@ const MainPage = () => {
 		}
 	}, [hash])
 
+	const styleTheme = theme === 'light' ? styles.light : styles.dark
+
 	return (
-		<main className={`${styles.main} ${styleTheme} `}>
+		<main className={`${styles.main} ${styleTheme}`}>
 			<HomePage />
 			<AboutPage />
 			<SkillsPage />

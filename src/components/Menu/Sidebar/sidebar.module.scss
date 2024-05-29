@@ -2,6 +2,7 @@
 
 .sidebar {
 	@include display-flex;
+	@include font;
 
 	flex-direction: column;
 	width: 250px;
@@ -14,10 +15,6 @@
 	left: 0;
 	z-index: 100;
 	transition: width 0.2s ease;
-
-	@include respond(tab-port) {
-		display: none;
-	}
 
 	&.sidebarClosed {
 		width: 2rem;

@@ -17,11 +17,7 @@ const Burger = () => {
 	}
 
 	return (
-		<div
-			className={styles.burger}
-			onMouseDown={handleEvent}
-			onTouchStart={handleEvent}
-		>
+		<div className={styles.burger} onClick={handleEvent}>
 			{NAV_LINKS_BURGER.map((link, index) => (
 				<div
 					key={index}
@@ -35,9 +31,7 @@ const Burger = () => {
 			))}
 
 			<div className={`${styles.mask} ${styleTheme}`}>
-				<NavLink to='#home'>
-					<FaHome size={40} />
-				</NavLink>
+				<FaHome size={30} />
 			</div>
 		</div>
 	)
