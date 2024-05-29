@@ -1,6 +1,5 @@
 import styles from './homePage.module.scss'
 
-AOS.init()
 const HomePage = () => {
 	return (
 		<section id='home' className={styles.home}>
