@@ -1,5 +1,4 @@
 import styles from './homePage.module.scss'
-import AOS from 'aos'
 
 AOS.init()
 const HomePage = () => {
