@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
 import styles from './sidebar.module.scss'
-import { Navigation, Author, ToggleButton } from '../../index'
+import { Navigation, Author, ToggleButtonSidebar } from '../../index'
 import { ThemeContext, SidebarContext } from '../../../providers/index'
 
 const Sidebar = () => {
@@ -16,7 +16,7 @@ const Sidebar = () => {
 			<div className={styles.container}>
 				<Author />
 				<Navigation />
-				<ToggleButton />
+				<ToggleButtonSidebar />
 			</div>
 		</div>
 	)

@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
-import styles from './toggleButton.module.scss'
+import styles from './toggleButtonSidebar.module.scss'
 import {
 	ThemeContext,
 	SidebarContext,
 } from '../../providers/index'
 
-const ToggleButton = () => {
+const ToggleButtonSidebar = () => {
 	const { isClosed, handleSidebar } = useContext(SidebarContext)
 	const [theme] = useContext(ThemeContext)
 
@@ -27,4 +27,4 @@ const ToggleButton = () => {
 	)
 }
 
-export { ToggleButton }
+export { ToggleButtonSidebar }

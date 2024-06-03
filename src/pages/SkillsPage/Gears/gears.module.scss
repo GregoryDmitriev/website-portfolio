@@ -1,0 +1,38 @@
+@import '../../../styles/index';
+
+.gearsContainer {
+	@include display-flex;
+	max-width: 20rem;
+	width: 50%;
+	height: 30rem;
+	background-color: $bg-light;
+	position: absolute;
+	top: -1px;
+	right: 0;
+
+	&.dark {
+		@include light-theme;
+	}
+
+	&.light {
+		@include dark-theme;
+	}
+
+	.gear {
+		cursor: auto;
+		width: clamp(18rem, 16.571rem + 3.81vw, 20rem);
+		height: clamp(18rem, 16.571rem + 3.81vw, 20rem);
+		position: absolute;
+		right: -10rem;
+		top: -15rem;
+	}
+
+	.smallGear {
+		cursor: auto;
+		width: clamp(13rem, 11.571rem + 3.81vw, 15rem);
+		height: clamp(13rem, 11.571rem + 3.81vw, 15rem);
+		position: absolute;
+		right: clamp(-8rem, 5vw, -4rem);
+		top: clamp(1rem, 3.5vw, 1.9rem);
+	}
+}

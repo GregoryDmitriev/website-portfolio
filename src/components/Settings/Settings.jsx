@@ -26,11 +26,12 @@ const Settings = () => {
 						<ThemeButton />
 					</div>
 				)}
-
-				<CiSettings
-					className={`${styles.iconSettings} ${styleTheme} `}
-					onClick={handleClick}
-				/>
+				<div className={`${styles.iconContainer} ${styleTheme} `}>
+					<CiSettings
+						className={`${styles.iconSettings} ${styleTheme} `}
+						onClick={handleClick}
+					/>
+				</div>
 			</div>
 		</div>
 	)

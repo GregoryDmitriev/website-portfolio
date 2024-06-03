@@ -2,6 +2,16 @@
 
 .about {
 	@include section;
+	height: 80vh !important;
+	background-color: $bg-dark;
+
+	&.dark {
+		@include light-theme;
+	}
+
+	&.light {
+		@include dark-theme;
+	}
 
 	.container {
 		@include container;

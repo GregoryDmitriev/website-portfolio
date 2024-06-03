@@ -3,7 +3,7 @@
 .settings {
 	@include display-flex;
 	@include font;
-	
+
 	font-size: 1.2rem;
 	min-width: 30px;
 	min-height: 30px;
@@ -18,10 +18,11 @@
 		flex-direction: row;
 		padding: 0;
 
-		.iconSettings {
-			width: 20px;
-			height: 20px;
-			animation: rotate 4s linear infinite;
+		.iconContainer {
+			@include display-flex;
+			width: 2rem;
+			height: 2rem;
+			border-radius: 50%;
 
 			&.dark {
 				@include dark-theme;
@@ -30,14 +31,21 @@
 			&.light {
 				@include light-theme;
 			}
+		}
 
-			@keyframes rotate {
-				0% {
-					transform: rotate(0deg);
-				}
-				100% {
-					transform: rotate(360deg);
-				}
+		.iconSettings {
+			width: 20px;
+			height: 20px;
+			animation: rotate 10s linear infinite;
+			background: none !important;
+			background-color: $color-light;
+
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
 			}
 		}
 

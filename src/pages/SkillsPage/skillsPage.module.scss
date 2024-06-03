@@ -2,6 +2,7 @@
 
 .skills {
   @include section;
+	position: relative;
 
   .container {
 		@include container;

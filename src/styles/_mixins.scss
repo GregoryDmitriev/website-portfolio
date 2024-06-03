@@ -23,15 +23,15 @@
 }
 
 @mixin dark-theme {
-	background: $bg-dark;
-	color: $font-white;
-	fill: $font-white;
+	background-color: $bg-dark;
+	color: $color-light;
+	fill:  $color-light;
 }
 
 @mixin light-theme {
-	background: $bg-light;
-	color: $font-black;
-	fill: $font-black;
+	background-color: $bg-light;
+	color: $color-dark;
+	fill: $color-dark;
 }
 
 @mixin font {
