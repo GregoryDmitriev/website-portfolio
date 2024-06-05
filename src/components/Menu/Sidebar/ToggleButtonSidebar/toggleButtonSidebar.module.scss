@@ -1,4 +1,4 @@
-@import '../../styles/index';
+@import '@/styles/index';
 
 .toggleButton {
 	@include display-flex;
@@ -11,9 +11,9 @@
 	width: 2rem;
 	height: 2rem;
 	overflow: hidden;
-	box-shadow: 10px 0 15px -5px $color-gray-300;
-	-webkit-box-shadow: 10px 0 15px -5px $color-gray-300;
-	-moz-box-shadow: 10px 0 15px -5px $color-gray-300;
+	box-shadow: 10px 0 10px -8px $color-gray-300;
+	-webkit-box-shadow: 10px 0 10px -8px $color-gray-300;
+	-moz-box-shadow: 10px 0 10px -8px $color-gray-300;
 	transition: width 1s ease;
 	cursor: pointer;
 

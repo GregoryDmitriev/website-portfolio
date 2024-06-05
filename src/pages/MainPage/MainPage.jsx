@@ -9,7 +9,7 @@ import {
 	SkillsPage,
 	ContactPage,
 } from '../index'
-import { ThemeContext } from '../../providers/index'
+import { ThemeContext } from '@/providers'
 
 const MainPage = () => {
 	const [theme] = useContext(ThemeContext)

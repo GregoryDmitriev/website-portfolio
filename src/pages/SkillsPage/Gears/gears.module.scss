@@ -1,9 +1,9 @@
-@import '../../../styles/index';
+@import '@/styles/index';
 
 .gearsContainer {
 	@include display-flex;
 	max-width: 20rem;
-	width: 50%;
+	width: 40%;
 	height: 30rem;
 	background-color: $bg-light;
 	position: absolute;
@@ -18,21 +18,65 @@
 		@include dark-theme;
 	}
 
-	.gear {
+	.gear,
+	.smallGear {
 		cursor: auto;
-		width: clamp(18rem, 16.571rem + 3.81vw, 20rem);
-		height: clamp(18rem, 16.571rem + 3.81vw, 20rem);
 		position: absolute;
+	}
+
+	.gear {
+		width: 20rem;
+		height: 20rem;
 		right: -10rem;
 		top: -15rem;
+
+		@include respond(tab-land) {
+			width: 18rem;
+			height: 18rem;
+			right: -8.7rem;
+			top: -13rem;
+		}
+
+		@include respond(phone) {
+			width: 16rem;
+			height: 16rem;
+			right: -8rem;
+			top: -11rem;
+		}
+
+		@include respond(sm-phone) {
+			width: 14rem;
+			height: 14rem;
+			right: -7rem;
+			top: -9rem;
+		}
 	}
 
 	.smallGear {
-		cursor: auto;
-		width: clamp(13rem, 11.571rem + 3.81vw, 15rem);
-		height: clamp(13rem, 11.571rem + 3.81vw, 15rem);
-		position: absolute;
-		right: clamp(-8rem, 5vw, -4rem);
-		top: clamp(1rem, 3.5vw, 1.9rem);
+		width: 15rem;
+		height: 15rem;
+		right: -0.85rem;
+		top: 1.5rem;
+
+		@include respond(tab-land) {
+			width: 13rem;
+			height: 13rem;
+			right: -0.55rem;
+			top: 1.8rem;
+		}
+
+		@include respond(phone) {
+			width: 11rem;
+			height: 11rem;
+			right: -1.6rem;
+			top: 3rem;
+		}
+
+		@include respond(sm-phone) {
+			width: 9rem;
+			height: 9rem;
+			right: -1.1rem;
+			top: 3.5rem;
+		}
 	}
 }

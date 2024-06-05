@@ -1,4 +1,4 @@
-@import '../../../../styles/index';
+@import '@/styles/index';
 
 .author {
 	@include display-flex;
@@ -16,9 +16,9 @@
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
-			box-shadow: 0px 0px 15px 0px $color-gray-300;
-			-webkit-box-shadow: 0px 0px 15px 0px $color-gray-300;
-			-moz-box-shadow: 0px 0px 15px 0px $color-gray-300;
+			box-shadow: 0px 0px 10px 0px $color-gray-300;
+			-webkit-box-shadow: 0px 0px 10px 0px $color-gray-300;
+			-moz-box-shadow: 0px 0px 10px 0px $color-gray-300;
 
 			&.imgSidebarClosed {
 				position: absolute;

@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import styles from './app.module.scss'
-import { Layout } from '../index'
-import { MainPage } from '../../pages/index'
-import { Settings } from '../Settings/Settings'
-import { ThemeProvider } from '../../providers/index'
+import { Layout, Settings } from '../index'
+import { MainPage } from '@/pages'
+import { ThemeProvider } from '@/providers'
 
 const App = () => {
 	return (

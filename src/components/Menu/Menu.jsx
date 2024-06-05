@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 
 import styles from './menu.module.scss'
 import { Burger, Sidebar } from '../index'
-import { SidebarProvider } from '../../providers'
+import { SidebarProvider } from '@/providers'
+
 
 const Menu = () => {
 	const [open, setOpen] = useState(() => {

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 
 import styles from './sidebar.module.scss'
-import { Navigation, Author, ToggleButtonSidebar } from '../../index'
-import { ThemeContext, SidebarContext } from '../../../providers/index'
+import { Navigation, Author, ToggleButtonSidebar } from '@components/index'
+import { ThemeContext, SidebarContext } from '@/providers'
 
 const Sidebar = () => {
 	const [theme] = useContext(ThemeContext)

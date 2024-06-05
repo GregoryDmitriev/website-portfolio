@@ -3,9 +3,9 @@ import { CiSettings } from 'react-icons/ci'
 
 import styles from './settings.module.scss'
 
-import { LanguageButton } from '../Settings/LanguageButton'
-import { ThemeButton } from '../Settings/ThemeButton'
-import { ThemeContext } from '../../providers/ThemeProvider/ThemeProvider'
+import { LanguageButton } from './LanguageButton'
+import { ThemeButton } from './ThemeButton'
+import { ThemeContext } from '@/providers'
 
 const Settings = () => {
 	const [open, setOpen] = useState(false)

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
 import styles from './author.module.scss'
-import { ThemeContext, SidebarContext } from '../../../../providers/index'
+import { ThemeContext, SidebarContext } from '@/providers/index'
 
 const Author = () => {
 	const [theme] = useContext(ThemeContext)

@@ -1,9 +1,7 @@
-@import '../../styles/index';
+@import '@/styles/index';
 
 .about {
 	@include section;
-	height: 80vh !important;
-	background-color: $bg-dark;
 
 	&.dark {
 		@include light-theme;

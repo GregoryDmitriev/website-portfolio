@@ -1,10 +1,44 @@
-@import '../../styles/index';
+@import '@/styles/index';
 
 .skills {
-  @include section;
+	@include section;
 	position: relative;
 
-  .container {
+	.container {
 		@include container;
+
+		.textContainer {
+			@include display-flex;
+			@include font;
+			width: 70%;
+			min-height: 100%;
+			padding: 0.8rem;
+			position: relative;
+			top: -6.5rem;
+			left: -8.8rem;
+			border: 0.2px solid $color-gray-300;
+			z-index: 10;
+
+			&.dark {
+				@include light-theme;
+			}
+
+			&.light {
+				@include dark-theme;
+			}
+		}
+
+		// @include respond(desktop) {
+		// 	background-color: red !important;
+		// }
+
+		// @include respond(tab-land) {
+		// 	background-color: rgb(60, 255, 0) !important;
+		// }
+
+		// @include respond(phone) {
+		// 	background-color: rgb(212, 0, 255) !important;
+		// }
+
 	}
 }

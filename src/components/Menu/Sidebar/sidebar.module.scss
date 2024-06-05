@@ -1,4 +1,4 @@
-@import '../../../styles/index';
+@import '@/styles/index';
 
 .sidebar {
 	@include display-flex;
@@ -7,14 +7,22 @@
 	flex-direction: column;
 	width: 250px;
 	height: 100vh;
-	-webkit-box-shadow: 0rem 0rem .8rem 0rem $color-gray-300;
-	-moz-box-shadow: 0rem 0rem .8rem 0rem $color-gray-300;
-	box-shadow: 0rem 0rem .8rem 0rem $color-gray-300;
+	-webkit-box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
+	-moz-box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
+	box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 100;
 	transition: width 0.2s ease;
+
+	&.dark {
+		@include dark-theme;
+	}
+
+	&.light {
+		@include light-theme;
+	}
 
 	&.sidebarClosed {
 		width: 2rem;
@@ -25,12 +33,4 @@
 
 		padding: 2rem;
 	}
-}
-
-.dark {
-	@include dark-theme;
-}
-
-.light {
-	@include light-theme;
 }

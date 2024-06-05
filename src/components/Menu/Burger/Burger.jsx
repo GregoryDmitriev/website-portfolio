@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { FaHome } from 'react-icons/fa'
 
 import styles from './burger.module.scss'
-import { ThemeContext } from '../../../providers/ThemeProvider/index'
-import { NAV_LINKS_BURGER } from '../../../constants/index'
+import { ThemeContext } from '@/providers'
+import { NAV_LINKS_BURGER } from '@/constants/index'
 
 const Burger = () => {
 	const [theme] = useContext(ThemeContext)

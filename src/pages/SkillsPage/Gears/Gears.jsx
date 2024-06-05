@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 
 import styles from './gears.module.scss'
-import { ThemeContext } from '../../../providers/index'
-import { Icon } from '../../../components/Icon'
+import { ThemeContext } from '@/providers'
+import { Icon } from '@/components/Icon'
 
 const Gears = () => {
 	const [theme] = useContext(ThemeContext)

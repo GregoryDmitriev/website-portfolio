@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 
 import styles from './aboutPage.module.scss'
-import { ThemeContext } from '../../providers/index'
+import { ThemeContext } from '@/providers'
+
 
 const AboutPage = () => {
 	const [theme] = useContext(ThemeContext)

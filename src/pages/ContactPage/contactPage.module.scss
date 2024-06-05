@@ -1,9 +1,28 @@
-@import '../../styles/index';
+@import '@/styles/index';
 
 .contact {
-  @include section;
+	@include section;
 
-  .container {  
-    @include container;
-  }
+	.container {
+		@include container;
+
+		.inkPen {
+			// animation-name: active-ink-pen;
+			// animation-fill-mode: forwards;
+			// animation-duration: 3s;
+			// animation-timing-function: ease-in-out;
+      // animation-iteration-count: infinite;
+
+			// stroke-dasharray: 100;
+			// stroke-dashoffset: 100;
+
+      // @keyframes active-ink-pen {
+       
+      //   100% {
+      //     stroke:$active-color;
+      //     stroke-dashoffset: 0;
+      //   }
+      // }
+		}
+	}
 }

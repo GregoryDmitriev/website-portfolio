@@ -5,7 +5,7 @@ import styles from './toggleButtonSidebar.module.scss'
 import {
 	ThemeContext,
 	SidebarContext,
-} from '../../providers/index'
+} from '@/providers/index'
 
 const ToggleButtonSidebar = () => {
 	const { isClosed, handleSidebar } = useContext(SidebarContext)
