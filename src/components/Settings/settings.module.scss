@@ -2,7 +2,6 @@
 
 .settings {
 	@include display-flex;
-	@include font;
 
 	font-size: 1.2rem;
 	min-width: 30px;
@@ -20,6 +19,8 @@
 
 		.iconContainer {
 			@include display-flex;
+
+			cursor: pointer;
 			width: 2rem;
 			height: 2rem;
 			border-radius: 50%;

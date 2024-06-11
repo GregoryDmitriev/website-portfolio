@@ -13,6 +13,7 @@
 	}
 
 	.gearFull {
+		cursor: none;
 		position: absolute;
 		background: none !important;
 		width: 70rem;
@@ -28,10 +29,10 @@
 		}
 
 		@include respond(phone) {
-			width: 55rem;
-			height: 55rem;
+			width: 60rem;
+			height: 60rem;
 			left: -21rem;
-			top: -19.2rem;
+			top: -21.2rem;
 		}
 
 		@include respond(sm-phone) {
@@ -44,5 +45,22 @@
 
 	.container {
 		@include container;
+	}
+
+	.textContainer {
+		@include display-flex;
+		width: 100vw;
+		height: 100vh;
+		padding: 0.8rem;
+		position: relative;
+		z-index: 10;
+
+		&.dark {
+			@include dark-theme;
+		}
+
+		&.light {
+			@include light-theme;
+		}
 	}
 }

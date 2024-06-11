@@ -2,7 +2,6 @@
 
 .sidebar {
 	@include display-flex;
-	@include font;
 
 	flex-direction: column;
 	width: 250px;

@@ -1,10 +1,27 @@
 @import '@/styles/index';
 
 .main {
-	@include container;
-	@include font;
-	font-size: 1.2rem;
-	flex-direction: column;
+	display: block;
+	padding: 0 1rem;
+	cursor: none;
+
+	@include respond(tab-land) {
+		padding: 0 1rem;
+		
+	}
+
+	@include respond(tab-port) {
+		padding: 0 1rem;
+		cursor: auto;
+	}
+
+	@include respond(phone) {
+		padding: 0 1rem;
+	}
+
+	@include respond(sm-phone) {
+		padding: 0 1rem;
+	}
 
 	&.dark {
 		@include dark-theme;

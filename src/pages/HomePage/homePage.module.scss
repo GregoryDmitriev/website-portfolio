@@ -8,7 +8,6 @@
 
 		.content {
 			@include display-flex;
-			@include font;
 			flex-direction: column;
 			width: clamp(21rem, 13.6056rem + 31.5493vw, 42rem);
 			min-height: 20%;

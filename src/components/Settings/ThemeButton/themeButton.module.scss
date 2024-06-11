@@ -3,6 +3,7 @@
 .themeButton {
 	@include display-flex;
 	
+	cursor: pointer;
 	padding-left: 20px;
 
 	svg {

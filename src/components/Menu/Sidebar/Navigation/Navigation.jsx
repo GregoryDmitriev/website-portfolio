@@ -23,7 +23,7 @@ const Navigation = () => {
 								) : (
 									<>
 										{icon}
-										{title}
+										<span>{title}</span>
 									</>
 								)}
 							</NavLink>

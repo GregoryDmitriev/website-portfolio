@@ -41,7 +41,6 @@
 
 		a {
 			@include display-flex;
-			@include font;
 
 			justify-content: flex-start;
 			font-size: 1.2rem;
@@ -60,6 +59,12 @@
 
 			svg {
 				margin-right: 1rem;
+			}
+
+			span {
+				@include font;
+				font-size: 20px;
+				font-weight: 500;
 			}
 		}
 	}

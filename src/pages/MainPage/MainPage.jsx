@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import styles from './mainPage.module.scss'
@@ -10,9 +10,24 @@ import {
 	ContactPage,
 } from '../index'
 import { ThemeContext } from '@/providers'
+import { CustomCursor } from '@/components'
 
 const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
+	const styleTheme = theme === 'light' ? styles.light : styles.dark
+
+	// resize
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', handleResize)
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
 
 	// scroll to hash
 	const { hash } = useLocation()
@@ -26,10 +41,9 @@ const MainPage = () => {
 		}
 	}, [hash])
 
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
-
 	return (
 		<main className={`${styles.main} ${styleTheme}`}>
+			{windowWidth > 900 && <CustomCursor />}
 			<HomePage />
 			<AboutPage />
 			<SkillsPage />

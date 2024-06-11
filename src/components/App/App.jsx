@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import styles from './app.module.scss'
@@ -10,6 +11,7 @@ const App = () => {
 		<ThemeProvider>
 			<div className={styles.app}>
 				<Settings />
+
 				<Router>
 					<Routes>
 						<Route path='/' element={<Layout />}>

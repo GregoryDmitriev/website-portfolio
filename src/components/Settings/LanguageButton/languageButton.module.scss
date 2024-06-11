@@ -3,7 +3,5 @@
 .languageButton {
 	@include display-flex;
 
-	p {
-		cursor: pointer;
-	}
+	cursor: pointer;
 }

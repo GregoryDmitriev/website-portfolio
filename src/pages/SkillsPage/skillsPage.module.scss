@@ -9,36 +9,71 @@
 
 		.textContainer {
 			@include display-flex;
-			@include font;
-			width: 70%;
-			min-height: 100%;
+			width: 100vw;
+			height: 30vh;
 			padding: 0.8rem;
 			position: relative;
-			top: -6.5rem;
-			left: -8.8rem;
-			border: 0.2px solid $color-gray-300;
 			z-index: 10;
 
 			&.dark {
-				@include light-theme;
+				@include dark-theme;
+				
 			}
 
 			&.light {
-				@include dark-theme;
+				@include light-theme;
 			}
 		}
 
-		// @include respond(desktop) {
-		// 	background-color: red !important;
-		// }
+		.line1,
+		.line2,
+		.line3 {
+			width: 100vw;
+			height: 33.3%;
+		}
 
-		// @include respond(tab-land) {
-		// 	background-color: rgb(60, 255, 0) !important;
-		// }
+		.line1 {
+			top: 0;
+			
+		}
+		
+		.line3 {
+			bottom: 0;
+		}
 
-		// @include respond(phone) {
-		// 	background-color: rgb(212, 0, 255) !important;
-		// }
+		.title {
+			font-size: 18rem;
+			font-weight: 900;
+			display: inline;
+			position: absolute;
+			letter-spacing: 1rem;
+			z-index: 1;
 
+			&.dark {
+				@include dark-theme;
+			}
+
+			&.light {
+				@include light-theme;
+			}
+
+			@include respond(tab-land) {
+				font-size: 12rem;
+			}
+
+			@include respond(tab-port) {
+				font-size: 8rem;
+			}
+
+			@include respond(phone) {
+				font-size: 5.3rem;
+			}
+
+			@include respond(sm-phone) {
+				font-size: 4.5rem;
+			}
+		}
 	}
+
+	
 }

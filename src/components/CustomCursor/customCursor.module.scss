@@ -1,0 +1,26 @@
+@import '@/styles/index';
+
+.cursor {
+	position: fixed;
+	height: 40px;
+	width: 40px;
+	border: 1px solid $color-gray-300;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	mix-blend-mode: difference;
+	z-index: 999;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	@include respond(tab-port) {
+		display: none;
+	}
+	
+	@include respond(phone) {
+		display: none;
+	}
+}

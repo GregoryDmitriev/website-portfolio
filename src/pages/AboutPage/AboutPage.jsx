@@ -12,8 +12,7 @@ const AboutPage = () => {
 	return (
 		<section id='about' className={`${styles.about} ${styleTheme}`}>
 			<div className={styles.container}>
-				<h1>About</h1>
-				<p>My name is Gregory and I am a frontend developer.</p>
+				<h2 className={`${styles.title} ${styleTheme}`}>ABOUT</h2>
 			</div>
 		</section>
 	)
