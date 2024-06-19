@@ -16,9 +16,7 @@ const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
-	// resize
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
 	useEffect(() => {
 		const handleResize = () => {
 			setWindowWidth(window.innerWidth)
@@ -31,7 +29,6 @@ const MainPage = () => {
 
 	// scroll to hash
 	const { hash } = useLocation()
-
 	useEffect(() => {
 		if (hash) {
 			const element = document.getElementById(hash.substring(1))

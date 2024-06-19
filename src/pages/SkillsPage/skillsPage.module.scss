@@ -2,47 +2,33 @@
 
 .skills {
 	@include section;
+
 	position: relative;
 
 	.container {
 		@include container;
 
-		.textContainer {
+		.line {
 			@include display-flex;
+
 			width: 100vw;
 			height: 30vh;
 			padding: 0.8rem;
 			position: relative;
 			z-index: 10;
+			top: 0;
 
 			&.dark {
-				@include dark-theme;
-				
+				background-color: $color-dark-opacity-07;
 			}
 
 			&.light {
-				@include light-theme;
+				background-color: $color-light-opacity-07;
 			}
 		}
 
-		.line1,
-		.line2,
-		.line3 {
-			width: 100vw;
-			height: 33.3%;
-		}
-
-		.line1 {
-			top: 0;
-			
-		}
-		
-		.line3 {
-			bottom: 0;
-		}
-
 		.title {
-			font-size: 18rem;
+			font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
 			font-weight: 900;
 			display: inline;
 			position: absolute;
@@ -56,24 +42,6 @@
 			&.light {
 				@include light-theme;
 			}
-
-			@include respond(tab-land) {
-				font-size: 12rem;
-			}
-
-			@include respond(tab-port) {
-				font-size: 8rem;
-			}
-
-			@include respond(phone) {
-				font-size: 5.3rem;
-			}
-
-			@include respond(sm-phone) {
-				font-size: 4.5rem;
-			}
 		}
 	}
-
-	
 }

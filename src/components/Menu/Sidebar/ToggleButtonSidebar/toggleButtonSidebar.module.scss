@@ -11,9 +11,6 @@
 	width: 2rem;
 	height: 2rem;
 	overflow: hidden;
-	box-shadow: 10px 0 10px -8px $color-gray-300;
-	-webkit-box-shadow: 10px 0 10px -8px $color-gray-300;
-	-moz-box-shadow: 10px 0 10px -8px $color-gray-300;
 	transition: width 1s ease;
 	cursor: pointer;
 
@@ -25,9 +22,17 @@
 
 	&.dark {
 		@include dark-theme;
+		
+		box-shadow: 10px 0 10px -8px $color-light-opacity;
+		-webkit-box-shadow: 10px 0 10px -8px $color-light-opacity;
+		-moz-box-shadow: 10px 0 10px -8px $color-light-opacity;
 	}
 
 	&.light {
 		@include light-theme;
+
+		box-shadow: 10px 0 10px -8px $color-dark-opacity;
+		-webkit-box-shadow: 10px 0 10px -8px $color-dark-opacity;
+		-moz-box-shadow: 10px 0 10px -8px $color-dark-opacity;
 	}
 }

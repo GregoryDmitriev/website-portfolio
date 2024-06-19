@@ -3,6 +3,8 @@ import { IoIosPerson } from 'react-icons/io'
 import { BsFillMortarboardFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
+import projectImg from '@/assets/images/image/pc_shoulders.jpg'
+
 const NAV_LINKS = [
 	{
 		title: 'Home',
@@ -54,4 +56,22 @@ const NAV_LINKS_BURGER = [
 	},
 ]
 
-export { NAV_LINKS, NAV_LINKS_BURGER }
+const PROJECTS = [
+	{
+		title: 'Project 1',
+		img: projectImg,
+		id: '1',
+	},
+	{
+		title: 'Project 2',
+		img: projectImg,
+		id: '2',
+	},
+	{
+		title: 'Project 3',
+		img: projectImg,
+		id: '3',
+	},
+]
+
+export { NAV_LINKS, NAV_LINKS_BURGER, PROJECTS }

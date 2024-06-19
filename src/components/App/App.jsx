@@ -2,11 +2,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import styles from './app.module.scss'
+import '@/styles/locomotive-scroll.scss'
 import { Layout, Settings } from '../index'
 import { MainPage } from '@/pages'
 import { ThemeProvider } from '@/providers'
 
 const App = () => {
+
 	return (
 		<ThemeProvider>
 			<div className={styles.app}>

@@ -6,9 +6,6 @@
 	flex-direction: column;
 	width: 250px;
 	height: 100vh;
-	-webkit-box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
-	-moz-box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
-	box-shadow: 0rem 0rem 0.5rem 0rem $color-gray-300;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,10 +14,18 @@
 
 	&.dark {
 		@include dark-theme;
+
+		-webkit-box-shadow: 0rem 0rem 0.5rem 0rem $color-light-opacity;
+		-moz-box-shadow: 0rem 0rem 0.5rem 0rem $color-light-opacity;
+		box-shadow: 0rem 0rem 0.5rem 0rem $color-light-opacity;
 	}
 
 	&.light {
 		@include light-theme;
+		
+		-webkit-box-shadow: 0rem 0rem 0.5rem 0rem $color-dark-opacity;
+		-moz-box-shadow: 0rem 0rem 0.5rem 0rem $color-dark-opacity;
+		box-shadow: 0rem 0rem 0.5rem 0rem $color-dark-opacity;
 	}
 
 	&.sidebarClosed {

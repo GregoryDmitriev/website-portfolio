@@ -21,17 +21,22 @@
 		li {
 			border-top-right-radius: 50%;
 			border-bottom-right-radius: 50%;
-			box-shadow: 5px 0 10px -5px $color-gray-300;
-			-webkit-box-shadow: 5px 0 10px -5px $color-gray-300;
-			-moz-box-shadow: 5px 0 10px -5px $color-gray-300;
 			margin: 1rem 0;
 
 			&.dark {
 				@include dark-theme;
+
+				box-shadow: 5px 0 10px -5px $color-light-opacity;
+				-webkit-box-shadow: 5px 0 10px -5px $color-light-opacity;
+				-moz-box-shadow: 5px 0 10px -5px $color-light-opacity;
 			}
 
 			&.light {
 				@include light-theme;
+				
+				box-shadow: 5px 0 10px -5px $color-dark-opacity;
+				-webkit-box-shadow: 5px 0 10px -5px $color-dark-opacity;
+				-moz-box-shadow: 5px 0 10px -5px $color-dark-opacity;
 			}
 		}
 	}

@@ -10,7 +10,6 @@
 	background-color: transparent;
 	border-radius: 50%;
 	z-index: 20;
-	box-shadow: 0px 0px 5px 0px $color-gray-300;
 
 	&.dark {
 		@include dark-theme;
@@ -35,15 +34,16 @@
 		left: 10%;
 		z-index: 20;
 		background: none;
-		box-shadow: 0px 0px 5px 0px $color-gray-300;
 		transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 		&.dark {
 			@include dark-theme;
+			
 		}
 
 		&.light {
 			@include light-theme;
+			
 		}
 
 		&.item2 {

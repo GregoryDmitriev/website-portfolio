@@ -39,7 +39,6 @@
 			height: 20px;
 			animation: rotate 10s linear infinite;
 			background: none !important;
-			background-color: $color-light;
 
 			&.dark {
 				@include dark-theme;

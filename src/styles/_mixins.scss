@@ -25,13 +25,13 @@
 }
 
 @mixin dark-theme {
-	background-color: $bg-dark;
+	background-color: $color-dark;
 	color: $color-light;
 	fill: $color-light;
 }
 
 @mixin light-theme {
-	background-color: $bg-light;
+	background-color: $color-light;
 	color: $color-dark;
 	fill: $color-dark;
 }

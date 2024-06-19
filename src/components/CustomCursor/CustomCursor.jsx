@@ -1,11 +1,11 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import styles from './customCursor.module.scss' //
+
+import styles from './customCursor.module.scss'
 
 const CustomCursor = () => {
 	const cursorRef = useRef(null)
-	const cursorSize = 40
 
 	const { context } = useGSAP(() => {
 		const xTo = gsap.quickTo(cursorRef.current, 'x', {

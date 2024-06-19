@@ -16,9 +16,6 @@
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
-			box-shadow: 0px 0px 10px 0px $color-gray-300;
-			-webkit-box-shadow: 0px 0px 10px 0px $color-gray-300;
-			-moz-box-shadow: 0px 0px 10px 0px $color-gray-300;
 
 			&.imgSidebarClosed {
 				position: absolute;
@@ -26,18 +23,40 @@
 				top: 3rem;
 				width: 150px;
 				height: 150px;
-				border-top-right-radius: 1px solid $color-gray-300;
-				border-bottom-right-radius: 1px solid $color-gray-300;
 				border-top-left-radius: 0;
 				border-bottom-left-radius: 0;
 
 				&.dark {
 					@include dark-theme;
+					border-top-right-radius: 1px solid $color-light-opacity;
+					border-bottom-right-radius: 1px solid $color-light-opacity;
 				}
 
 				&.light {
 					@include light-theme;
+					border-top-right-radius: 1px solid $color-light-opacity;
+					border-bottom-right-radius: 1px solid $color-light-opacity;
 				}
+			}
+
+			&.dark {
+				@include dark-theme;
+
+				box-shadow: 0px 0px 10px 0px $color-light-opacity;
+				-webkit-box-shadow: 0px 0px 10px 0px $color-light-opacity;
+				-moz-box-shadow: 0px 0px 10px 0px $color-light-opacity;
+				border-top-right-radius: 1px solid $color-light-opacity;
+				border-bottom-right-radius: 1px solid $color-light-opacity;
+			}
+
+			&.light {
+				@include light-theme;
+				
+				box-shadow: 0px 0px 10px 0px $color-dark-opacity;
+				-webkit-box-shadow: 0px 0px 10px 0px $color-dark-opacity;
+				-moz-box-shadow: 0px 0px 10px 0px $color-dark-opacity;
+				border-radius: 1px solid $color-dark-opacity;
+				border-radius: 1px solid $color-dark-opacity;
 			}
 		}
 	}

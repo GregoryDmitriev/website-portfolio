@@ -5,7 +5,6 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 import styles from './skillsPage.module.scss'
 import { Gears } from './Gears'
-import { Icon } from '@/components/Icon'
 import { ThemeContext } from '@/providers'
 
 const SkillsPage = () => {
@@ -14,81 +13,48 @@ const SkillsPage = () => {
 
 	gsap.registerPlugin(ScrollTrigger)
 
-	// const skillsRef = useRef(null)
+	// const lineRef = useRef(null)
+	// const titleRef = useRef(null)
 
 	// useGSAP(() => {
-	// 	gsap.from(skillsRef.current, {
-	// 		opacity: 0,
-	// 		x: -500,
-	// 		duration: 3,
+	// 	const tl = gsap.timeline({
 	// 		scrollTrigger: {
-	// 			trigger: skillsRef.current,
-	// 			start: '48% center',
-	// 			end: 'bottom 10%',
-	// 			markers: {
-	// 				startColor: 'red',
-	// 				endColor: 'red',
-	// 			},
+	// 			trigger: lineRef.current,
+	// 			start: '50% 53%',
+	// 			end: 'bottom 80%',
+	// 			scrub: 1,
+	// 			markers: false,
 	// 		},
 	// 	})
-	// }, {scope: skillsRef.current})
 
-	const skillsRef1 = useRef(null)
-	const skillsRef2 = useRef(null)
-	const skillsRef3 = useRef(null)
-
-useGSAP(() => {
-	const tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: skillsRef1.current,
-			start: 'center center',
-			end: 'bottom 10%',
-			markers: {
-				startColor: 'red',
-				endColor: 'red',
-			},
-		},
-	})
-
-	tl.from(skillsRef1.current, {
-		opacity: 0,
-		x: -500,
-		duration: 5,
-	})
-		.from(
-			skillsRef2.current,
-			{
-				opacity: 0,
-				x: -500,
-				duration: 3,
-			},
-			'-=1.5'
-		)
-		.from(
-			skillsRef3.current,
-			{
-				opacity: 0,
-				x: -500,
-				duration: 2,
-			},
-			'-=1.5'
-		)
-}, [])
+	// 	tl.from(lineRef.current, {
+	// 		opacity: 0,
+	// 		x: -500,
+	// 		duration: 0.5,
+	// 	})
+	// 		.to(lineRef.current, {
+	// 			height: '100vh',
+	// 			duration: 0.5,
+	// 		})
+	// 		.to(titleRef.current, {
+	// 			opacity: 0,
+	// 			duration: 2,
+	// 			delay: 2,
+	// 		})
+	// }, [])
 
 	return (
 		<section id='skills' className={styles.skills}>
 			<div className={styles.container}>
+				<div className={`${styles.line} ${styleTheme} `} 
+				// ref={lineRef}
+				></div>
 
-				<div className={`${styles.textContainer} ${styleTheme} ${styles.line1}`} ref={skillsRef1}>
-				</div>
-
-				<div className={`${styles.textContainer} ${styleTheme} ${styles.line2}`} ref={skillsRef2}>
-				</div>
-
-				<div className={`${styles.textContainer} ${styleTheme} ${styles.line3}`} ref={skillsRef3}>
-				</div>
-
-				<h2 className={`${styles.title} ${styleTheme}`}>SKILLS</h2>
+				<h2 className={`${styles.title} ${styleTheme}`} 
+				// ref={titleRef}
+				>
+					SKILLS
+				</h2>
 
 				<Gears />
 			</div>

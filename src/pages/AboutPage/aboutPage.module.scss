@@ -16,7 +16,7 @@
 	}
 
 	.title {
-		font-size: 18rem;
+		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
 		font-weight: 900;
 		display: inline;
 		z-index: 1;
@@ -28,22 +28,6 @@
 
 		&.light {
 			@include dark-theme;
-		}
-
-		@include respond(tab-land) {
-			font-size: 12rem;
-		}
-
-		@include respond(tab-port) {
-			font-size: 8rem;
-		}
-
-		@include respond(phone) {
-			font-size: 5.3rem;
-		}
-
-		@include respond(sm-phone) {
-			font-size: 4.5rem;
 		}
 	}
 }
