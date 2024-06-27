@@ -1,68 +1,64 @@
 @import '@/styles/index';
 
-.contact {
-	@include section;
+.container {
+	@include container;
 
-	.container {
-		@include container;
+	.inkPen {
+		position: relative;
+		z-index: 10;
+		// animation-name: active-ink-pen;
+		// animation-fill-mode: forwards;
+		// animation-duration: 3s;
+		// animation-timing-function: ease-in-out;
+		// animation-iteration-count: infinite;
 
-		.inkPen {
-			position: relative;
-			z-index: 10;
-			// animation-name: active-ink-pen;
-			// animation-fill-mode: forwards;
-			// animation-duration: 3s;
-			// animation-timing-function: ease-in-out;
-			// animation-iteration-count: infinite;
+		// stroke-dasharray: 100;
+		// stroke-dashoffset: 100;
 
-			// stroke-dasharray: 100;
-			// stroke-dashoffset: 100;
+		// @keyframes active-ink-pen {
 
-			// @keyframes active-ink-pen {
-
-			//   100% {
-			//     stroke:$active-color;
-			//     stroke-dashoffset: 0;
-			//   }
-			// }
-		}
-
-		// .title {
-		// 	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
-		// 	font-weight: 900;
-		// 	display: inline;
-		// 	position: absolute;
-		// 	letter-spacing: 1rem;
-		// 	z-index: 1;
-		// 	background: none !important;
-
-		// 	&.dark {
-		// 		color: $color-light-opacity-07;
-		// 	}
-
-		// 	&.light {
-		// 		color: $color-dark-opacity-07;
-		// 	}
+		//   100% {
+		//     stroke:$active-color;
+		//     stroke-dashoffset: 0;
+		//   }
 		// }
+	}
 
-		@keyframes draw-text {
-  0% {
-    stroke-dasharray: 0, 100;
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dasharray: 100, 0;
-    stroke-dashoffset: 0;
-  }
-}
+	// .title {
+	// 	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
+	// 	font-weight: 900;
+	// 	display: inline;
+	// 	position: absolute;
+	// 	letter-spacing: 1rem;
+	// 	z-index: 1;
+	// 	background: none !important;
 
-.contactText {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: draw-text 2s forwards;
-}
+	// 	&.dark {
+	// 		color: $color-light-opacity-07;
+	// 	}
+
+	// 	&.light {
+	// 		color: $color-dark-opacity-07;
+	// 	}
+	// }
+
+	@keyframes draw-text {
+		0% {
+			stroke-dasharray: 0, 100;
+			stroke-dashoffset: 0;
+		}
+		100% {
+			stroke-dasharray: 100, 0;
+			stroke-dashoffset: 0;
+		}
+	}
+
+	.contactText {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-dasharray: 100;
+		stroke-dashoffset: 100;
+		animation: draw-text 2s forwards;
 	}
 }

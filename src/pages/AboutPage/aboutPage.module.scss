@@ -1,7 +1,16 @@
 @import '@/styles/index';
 
-.about {
-	@include section;
+.container {
+	@include container;
+}
+
+.title {
+	@include fontBold;
+
+	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
+	display: inline;
+	z-index: 1;
+	letter-spacing: 1rem;
 
 	&.dark {
 		@include light-theme;
@@ -9,25 +18,5 @@
 
 	&.light {
 		@include dark-theme;
-	}
-
-	.container {
-		@include container;
-	}
-
-	.title {
-		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
-		font-weight: 900;
-		display: inline;
-		z-index: 1;
-		letter-spacing: 1rem;
-
-		&.dark {
-			@include light-theme;
-		}
-
-		&.light {
-			@include dark-theme;
-		}
 	}
 }

@@ -1,2 +1,2 @@
-export { ThemeProvider, ThemeContext } from './ThemeProvider/index'
-export { SidebarProvider, SidebarContext } from './SidebarProvider/index'
+export { ThemeProvider, ThemeContext } from "./ThemeProvider/index";
+export { SidebarProvider, SidebarContext } from "./SidebarProvider/index";

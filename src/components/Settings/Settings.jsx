@@ -1,21 +1,21 @@
-import { useContext, useState } from 'react'
-import { CiSettings } from 'react-icons/ci'
+import { useContext, useState } from "react";
+import { CiSettings } from "react-icons/ci";
 
-import styles from './settings.module.scss'
+import styles from "./settings.module.scss";
 
-import { LanguageButton } from './LanguageButton'
-import { ThemeButton } from './ThemeButton'
-import { ThemeContext } from '@/providers'
+import { LanguageButton } from "./LanguageButton";
+import { ThemeButton } from "./ThemeButton";
+import { ThemeContext } from "@/providers";
 
 const Settings = () => {
-	const [open, setOpen] = useState(false)
-	const [theme] = useContext(ThemeContext)
+	const [open, setOpen] = useState(false);
+	const [theme] = useContext(ThemeContext);
 
 	const handleClick = () => {
-		setOpen(!open)
-	}
+		setOpen(!open);
+	};
 
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
+	const styleTheme = theme === "light" ? styles.light : styles.dark;
 
 	return (
 		<div className={`${styles.settings} ${styleTheme} `}>
@@ -34,7 +34,7 @@ const Settings = () => {
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export { Settings }
+export { Settings };

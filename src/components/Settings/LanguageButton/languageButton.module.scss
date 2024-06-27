@@ -4,4 +4,14 @@
 	@include display-flex;
 
 	cursor: pointer;
+	background: none;
+	border: none;
+	border-radius: 50%;
+
+	&.dark {
+		@include dark-theme;
+	}
+	&.light {
+		@include light-theme;
+	}
 }

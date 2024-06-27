@@ -1,15 +1,15 @@
-import { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
-import styles from './navigation.module.scss'
-import { NAV_LINKS } from '@/constants/index'
-import { ThemeContext, SidebarContext } from '@/providers/index'
+import styles from "./navigation.module.scss";
+import { NAV_LINKS } from "@/constants/index";
+import { ThemeContext, SidebarContext } from "@/providers/index";
 
 const Navigation = () => {
-	const { isClosed } = useContext(SidebarContext)
-	const [theme] = useContext(ThemeContext)
+	const { isClosed } = useContext(SidebarContext);
+	const [theme] = useContext(ThemeContext);
 
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
+	const styleTheme = theme === "light" ? styles.light : styles.dark;
 
 	return (
 		<>
@@ -17,7 +17,7 @@ const Navigation = () => {
 				<ul className={isClosed ? styles.sidebarClosed : styles.sidebarList}>
 					{NAV_LINKS.map(({ title, to, icon }) => (
 						<li key={to} className={styleTheme}>
-							<NavLink to={to} >
+							<NavLink to={to}>
 								{isClosed ? (
 									icon
 								) : (
@@ -32,7 +32,7 @@ const Navigation = () => {
 				</ul>
 			</nav>
 		</>
-	)
-}
+	);
+};
 
-export { Navigation }
+export { Navigation };

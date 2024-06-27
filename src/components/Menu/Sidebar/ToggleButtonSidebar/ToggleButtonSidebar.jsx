@@ -2,10 +2,7 @@ import { useContext } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 import styles from './toggleButtonSidebar.module.scss'
-import {
-	ThemeContext,
-	SidebarContext,
-} from '@/providers/index'
+import { ThemeContext, SidebarContext } from '@/providers/index'
 
 const ToggleButtonSidebar = () => {
 	const { isClosed, handleSidebar } = useContext(SidebarContext)
@@ -15,6 +12,7 @@ const ToggleButtonSidebar = () => {
 
 	return (
 		<button
+			type='button'
 			onClick={handleSidebar}
 			className={
 				!isClosed

@@ -1,26 +1,56 @@
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import styles from './homePage.module.scss'
 import { ThemeContext } from '@/providers'
 
+gsap.registerPlugin(ScrollTrigger)
 const HomePage = () => {
-	const [theme] = useContext(ThemeContext)
+	const boxRef = useRef(null)
+	const containerHomeRef = useRef(null)
 
+	useGSAP(() => {
+		const tl = gsap.timeline()
+
+		tl.to(boxRef.current, {
+			scrollTrigger: {
+				trigger: containerHomeRef.current,
+				start: '20% 10%',
+				end: 'bottom 80%',
+				scrub: true,
+				pin: true,
+				markers: true,
+			},
+			xPercent: 500,
+			yPercent: -200,
+			duration: 1,
+			scale: 2,
+		})
+	}, [])
+
+	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	return (
-		<section id='home' className={styles.home}>
-			<div className={styles.container}>
-				<div className={styles.content}>
-					<h1 className={styles.title}>Hi, I'm Gregory Dmitriev</h1>
-					<p>
-						I am a frontend web developer. I can provide clean code and pixel
-						perfect design. I also make website more & more interactive with web
-						animations.
-					</p>
-				</div>
+		<>
+			<div
+				className={styles.container}
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					...styleTheme,
+				}}
+				ref={containerHomeRef}
+			>
+				<span
+					ref={boxRef}
+					style={{ width: '100px', height: '100px', backgroundColor: 'black' }}
+				/>
 			</div>
-		</section>
+		</>
 	)
 }
 

@@ -7,9 +7,7 @@ import styles from './contactPage.module.scss'
 import { Icon } from '@/components/Icon'
 import { ThemeContext } from '@/providers'
 
-
 const ContactPage = () => {
-
 	const textRef = useRef(null)
 
 	useGSAP(() => {
@@ -28,12 +26,10 @@ const ContactPage = () => {
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	return (
-		<section id='contact' className={styles.contact}>
-			<div className={styles.container}>
-				<Icon id='ink-pen' className={`${styles.inkPen} ${styleTheme}`} />
-				<h3 className={`${styles.contactText} ${styleTheme}`}>Get in touch</h3>
-			</div>
-		</section>
+		<div className={styles.container}>
+			<Icon id='ink-pen' className={`${styles.inkPen} ${styleTheme}`} />
+			<h3 className={`${styles.contactText} ${styleTheme}`}>Get in touch</h3>
+		</div>
 	)
 }
 

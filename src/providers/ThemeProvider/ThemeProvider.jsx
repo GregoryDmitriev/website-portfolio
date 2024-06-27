@@ -1,22 +1,22 @@
-import { useEffect, useState, createContext } from 'react'
+import { useEffect, useState, createContext } from "react";
 
-const ThemeContext = createContext()
+const ThemeContext = createContext('light')
 
 const ThemeProvider = ({ children }) => {
 	const [theme, setTheme] = useState(() => {
-		const savedTheme = localStorage.getItem('theme')
-		return savedTheme || 'light'
-	})
+		const savedTheme = localStorage.getItem("theme");
+		return savedTheme || "light";
+	});
 
 	useEffect(() => {
-		localStorage.setItem('theme', theme)
-	}, [theme])
+		localStorage.setItem("theme", theme);
+	}, [theme]);
 
 	return (
 		<ThemeContext.Provider value={[theme, setTheme]}>
 			{children}
 		</ThemeContext.Provider>
-	)
-}
+	);
+};
 
-export { ThemeProvider, ThemeContext }
+export { ThemeProvider, ThemeContext };

@@ -1,18 +1,5 @@
 @import '@/styles/index';
 
-.projects {
-	@include section;
-
-	position: relative;
-
-	&.dark {
-		@include light-theme;
-	}
-
-	&.light {
-		@include dark-theme;
-	}
-
 	.gearFull {
 		cursor: none;
 		position: absolute;
@@ -131,4 +118,4 @@
 			color: $color-light-opacity;
 		}
 	}
-}
+

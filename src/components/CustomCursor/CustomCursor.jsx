@@ -1,35 +1,35 @@
-import { useRef } from 'react'
-import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
-import styles from './customCursor.module.scss'
+import styles from "./customCursor.module.scss";
 
 const CustomCursor = () => {
-	const cursorRef = useRef(null)
+	const cursorRef = useRef(null);
 
 	const { context } = useGSAP(() => {
-		const xTo = gsap.quickTo(cursorRef.current, 'x', {
+		const xTo = gsap.quickTo(cursorRef.current, "x", {
 			xPercent: -30,
 			duration: 0.3,
-		})
-		const yTo = gsap.quickTo(cursorRef.current, 'y', {
+		});
+		const yTo = gsap.quickTo(cursorRef.current, "y", {
 			yPercent: -50,
 			duration: 0.3,
-		})
+		});
 
-		const onMouseMove = e => {
-			xTo(e.clientX)
-			yTo(e.clientY)
-		}
+		const onMouseMove = (e) => {
+			xTo(e.clientX);
+			yTo(e.clientY);
+		};
 
-		window.addEventListener('mousemove', onMouseMove)
+		window.addEventListener("mousemove", onMouseMove);
 
 		return () => {
-			window.removeEventListener('mousemove', onMouseMove)
-		}
-	}, [cursorRef])
+			window.removeEventListener("mousemove", onMouseMove);
+		};
+	}, [cursorRef]);
 
-	return <div className={styles.cursor} ref={cursorRef}></div>
-}
+	return <div className={styles.cursor} ref={cursorRef}/>
+};
 
-export { CustomCursor }
+export { CustomCursor };

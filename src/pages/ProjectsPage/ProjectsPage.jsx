@@ -13,11 +13,11 @@ const ProjectsPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
-	// gsap.registerPlugin(ScrollTrigger)
+	gsap.registerPlugin(ScrollTrigger)
 
-	// const projectsContainerRef = useRef(null)
-	// const projectsRef = useRef(null)
-	// const titleRef = useRef(null)
+	const projectsContainerRef = useRef(null)
+	const projectsRef = useRef(null)
+	const titleRef = useRef(null)
 
 	// useGSAP(
 	// 	() => {
@@ -56,22 +56,21 @@ const ProjectsPage = () => {
 	// )
 
 	return (
-		<section id='projects' className={`${styles.projects} ${styleTheme}`}>
-			<div className={styles.container}>
-				<Icon
-					id='icon-gear-full'
-					className={`${styles.gearFull} ${styleTheme}`}
-				/>
-
+		<div className={styles.container}>
+			<Icon
+				id='icon-gear-full'
+				className={`${styles.gearFull} ${styleTheme}`}
+			/>
+			{/* 
 				<div
 					className={`${styles.projectsContainer} ${styleTheme}`}
-					// ref={projectsContainerRef}
+					ref={projectsContainerRef}
 				>
 					<div
 						className={`${styles.projectsItem} ${styleTheme}`}
 						data-scroll
 						data-scroll-speed='.02'
-						// ref={projectsRef}
+						ref={projectsRef}
 					>
 						{PROJECTS.map(project => (
 							<div
@@ -82,15 +81,12 @@ const ProjectsPage = () => {
 							</div>
 						))}
 					</div>
-				</div>
+				</div> */}
 
-				<h2 className={`${styles.title} ${styleTheme}`}
-				//  ref={titleRef}
-				 >
-					PROJECTS
-				</h2>
-			</div>
-		</section>
+			<h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
+				PROJECTS
+			</h2>
+		</div>
 	)
 }
 

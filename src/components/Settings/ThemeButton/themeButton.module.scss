@@ -2,12 +2,22 @@
 
 .themeButton {
 	@include display-flex;
-	
+
 	cursor: pointer;
 	padding-left: 20px;
+	background: none;
+	border: none;
+	border-radius: 50%;
 
 	svg {
 		width: 25px;
 		height: 25px;
+	}
+
+	&.dark {
+		@include dark-theme;
+	}
+	&.light {
+		@include light-theme;
 	}
 }

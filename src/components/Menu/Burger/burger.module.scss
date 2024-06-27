@@ -38,12 +38,10 @@
 
 		&.dark {
 			@include dark-theme;
-			
 		}
 
 		&.light {
 			@include light-theme;
-			
 		}
 
 		&.item2 {
@@ -72,7 +70,7 @@
 	}
 }
 
-.mask {
+.burgerBox {
 	@include display-flex;
 
 	top: 1.2rem;
@@ -86,6 +84,69 @@
 	line-height: 120px;
 	cursor: pointer;
 	position: fixed;
+
+	.menuCheckbox {
+		display: none;
+	}
+
+	label {
+		@include display-flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		width: 30px;
+		height: 30px;
+		transform: translateY(-50%);
+		transition: 0.3s ease transform;
+		cursor: pointer;
+		z-index: 30;
+
+		div {
+			width: 6px;
+			height: 2px;
+			margin-left: 0;
+			margin-bottom: 6px;
+			border-radius: 4px;
+			transition: 0.3s ease width, 0.3s ease margin-left,
+				0.3s ease margin-bottom, 0.3s ease background-color;
+
+			&.dark {
+				@include light-theme;
+			}
+
+			&.light {
+				@include dark-theme;
+			}
+
+			&:first-child {
+				width: 22px;
+			}
+
+			&:nth-child(2) {
+				width: 15px;
+			}
+
+			&:last-child {
+				width: 30px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.menuCheckbox:checked + label {
+		transform: translateY(-50%) rotateZ(-90deg);
+
+		div {
+			width: 2px;
+			margin-left: 12px;
+			margin-bottom: 3px;
+		}
+	}
 
 	&.dark {
 		@include dark-theme;

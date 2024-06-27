@@ -1,13 +1,13 @@
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import styles from './author.module.scss'
-import { ThemeContext, SidebarContext } from '@/providers/index'
+import styles from "./author.module.scss";
+import { ThemeContext, SidebarContext } from "@/providers/index";
 
 const Author = () => {
-	const [theme] = useContext(ThemeContext)
-	const { isClosed } = useContext(SidebarContext)
+	const [theme] = useContext(ThemeContext);
+	const { isClosed } = useContext(SidebarContext);
 
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
+	const styleTheme = theme === "light" ? styles.light : styles.dark;
 
 	return (
 		<div className={styles.author}>
@@ -18,10 +18,10 @@ const Author = () => {
 							? `${styles.imgContainer} ${styleTheme} ${styles.imgSidebarClosed}`
 							: `${styles.imgContainer} ${styleTheme}`
 					}
-				></div>
+				/>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export { Author }
+export { Author };
