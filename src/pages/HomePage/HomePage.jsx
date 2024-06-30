@@ -2,55 +2,55 @@ import { useContext, useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import {
+	ContactShadows,
+	Environment,
+	OrbitControls,
+	Scroll,
+	ScrollControls,
+	Sky,
+} from '@react-three/drei'
+import { useControls } from 'leva'
 
 import styles from './homePage.module.scss'
 import { ThemeContext } from '@/providers'
+import { AvatarScene } from '@/components/AvatarScene'
+import { Canvas } from '@react-three/fiber'
 
 gsap.registerPlugin(ScrollTrigger)
+
 const HomePage = () => {
-	const boxRef = useRef(null)
-	const containerHomeRef = useRef(null)
-
-	useGSAP(() => {
-		const tl = gsap.timeline()
-
-		tl.to(boxRef.current, {
-			scrollTrigger: {
-				trigger: containerHomeRef.current,
-				start: '20% 10%',
-				end: 'bottom 80%',
-				scrub: true,
-				pin: true,
-				markers: true,
-			},
-			xPercent: 500,
-			yPercent: -200,
-			duration: 1,
-			scale: 2,
-		})
-	}, [])
-
-	const [theme] = useContext(ThemeContext)
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
+	const { animation } = useControls({
+		animation: {
+			value: 'stand',
+			options: ['stand', 'falling', 'fallingToLanding'],
+		},
+	})
 
 	return (
-		<>
-			<div
-				className={styles.container}
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					...styleTheme,
-				}}
-				ref={containerHomeRef}
-			>
-				<span
-					ref={boxRef}
-					style={{ width: '100px', height: '100px', backgroundColor: 'black' }}
+		<Canvas shadows camera={{ position: [1, 1, 10], fov: 30 }}>
+			<OrbitControls
+				makeDefault
+				minPolarAngle={0}
+				maxPolarAngle={Math.PI / 2.5}
+				minDistance={1}
+				maxDistance={6}
+			/>
+			<group position={[1, -1, -1]}>
+				<ContactShadows
+					opacity={0.42}
+					scale={10}
+					blur={1}
+					far={10}
+					resolution={256}
+					color='#000000'
 				/>
-			</div>
-		</>
+
+				<AvatarScene animation={animation} />
+			</group>
+
+			<ambientLight intensity={2} />
+		</Canvas>
 	)
 }
 

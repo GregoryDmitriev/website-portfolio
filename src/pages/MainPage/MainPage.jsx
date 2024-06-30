@@ -71,11 +71,14 @@ const MainPage = () => {
 		<main className={`${styles.main} ${styleTheme}`}>
 			{windowWidth >= 900 && <CustomCursor />}
 
-			<div className={styles.content}>
+			<div
+				className={styles.content}
+			>
 				<section id='home'>
 					<HomePage />
 				</section>
-				<section id='about'>
+
+				{/* <section id='about'>
 					<AboutPage />
 				</section>
 				<section id='skills'>
@@ -86,7 +89,7 @@ const MainPage = () => {
 				</section>
 				<section id='contact'>
 					<ContactPage />
-				</section>
+				</section> */}
 			</div>
 		</main>
 	)

@@ -27,8 +27,11 @@ const Layout = () => {
 
 	return (
 		<>
-			{!closeMenu && <Menu useRef={menuRef} />}
-			<Outlet />
+			{/* {!closeMenu && <Menu useRef={menuRef} />} */}
+
+			<>
+				<Outlet />
+			</>
 		</>
 	)
 }

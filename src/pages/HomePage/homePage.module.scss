@@ -6,7 +6,6 @@
 	.content {
 		@include display-flex;
 
-		// flex-direction: column;
 		width: clamp(21rem, 13.6056rem + 31.5493vw, 42rem);
 		min-height: 20%;
 		padding: 0.8rem;
@@ -21,4 +20,6 @@
 			font-size: clamp(1.125rem, 0.768rem + 0.952vw, 1.625rem);
 		}
 	}
+
+
 }
