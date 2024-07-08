@@ -11,10 +11,12 @@ import { Icon } from '@/components/Icon'
 gsap.registerPlugin(ScrollTrigger)
 
 const HomePage = () => {
+	const [theme] = useContext(ThemeContext)
+	const styleTheme = theme === 'light' ? styles.light : styles.dark
 	return (
 		<div className={styles.container}>
 
-			<Icon id='hero-home' className={styles.heroHome} />
+			<Icon id='hero-home' className={`${styles.heroHome} ${styleTheme}`} />
 		</div>
 	)
 }

@@ -4,6 +4,7 @@
 	@include container;
 
 	position: relative;
+	overflow-x: hidden;
 
 	// .content {
 	// 	@include display-flex;
@@ -28,5 +29,13 @@
 		height: 896px;
 		position: absolute;
 		bottom: -100px;
+
+		&.light {
+			fill: $color-dark-opacity;
+		}
+
+		&.dark {
+			fill: $color-light-opacity;
+		}
 	}
 }
