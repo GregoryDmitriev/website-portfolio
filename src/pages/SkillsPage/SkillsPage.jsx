@@ -44,7 +44,7 @@ const SkillsPage = () => {
 
 	return (
 		<div className={styles.container}>
-			<div className={`${styles.line} ${styleTheme} `} ref={lineRef} />
+			{/* <div className={`${styles.line} ${styleTheme} `} ref={lineRef} /> */}
 
 			<h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
 				SKILLS

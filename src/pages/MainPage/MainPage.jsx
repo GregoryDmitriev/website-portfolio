@@ -69,28 +69,28 @@ const MainPage = () => {
 
 	return (
 		<main className={`${styles.main} ${styleTheme}`}>
-			{windowWidth >= 900 && <CustomCursor />}
+			
+				{windowWidth >= 900 && <CustomCursor />}
 
-			<div
-				className={styles.content}
-			>
-				<section id='home'>
-					<HomePage />
-				</section>
+				<div className={styles.content}>
+					<section id='home'>
+						<HomePage />
+					</section>
 
-				{/* <section id='about'>
-					<AboutPage />
-				</section>
-				<section id='skills'>
-					<SkillsPage />
-				</section>
-				<section id='projects'>
-					<ProjectsPage />
-				</section>
-				<section id='contact'>
-					<ContactPage />
-				</section> */}
-			</div>
+					<section id='about'>
+						<AboutPage />
+					</section>
+					<section id='skills'>
+						<SkillsPage />
+					</section>
+					<section id='projects'>
+						<ProjectsPage />
+					</section>
+					<section id='contact'>
+						<ContactPage />
+					</section>
+				</div>
+			
 		</main>
 	)
 }
