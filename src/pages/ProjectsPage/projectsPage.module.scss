@@ -1,121 +1,114 @@
 @import '@/styles/index';
 
-	.gearFull {
-		cursor: none;
-		position: absolute;
-		background: none !important;
-		width: 70rem;
-		height: 70rem;
-		left: -24rem;
-		top: -24.5rem;
+.gearFull {
+	cursor: none;
+	position: absolute;
+	background: none !important;
+	width: 70rem;
+	height: 70rem;
+	left: -24rem;
+	top: -24.5rem;
 
-
-		@include respond(tab-land) {
-			width: 65rem;
-			height: 65rem;
-			left: -22rem;
-			top: -22.7rem;
-		}
-
-		@include respond(phone) {
-			width: 60rem;
-			height: 60rem;
-			left: -21rem;
-			top: -21.2rem;
-		}
-
-		@include respond(sm-phone) {
-			width: 45rem;
-			height: 45rem;
-			left: -17rem;
-			top: -15.8rem;
-		}
+	@include respond(tab-land) {
+		width: 65rem;
+		height: 65rem;
+		left: -22rem;
+		top: -22.7rem;
 	}
 
-	.container {
-		@include container;
-
-		position: relative;
+	@include respond(phone) {
+		width: 60rem;
+		height: 60rem;
+		left: -21rem;
+		top: -21.2rem;
 	}
 
-	.projectsContainer {
-		@include display-flex;
+	@include respond(sm-phone) {
+		width: 45rem;
+		height: 45rem;
+		left: -17rem;
+		top: -15.8rem;
+	}
+}
 
-		width: 100vw;
-		height: 100vh;
-		padding: 0.8rem;
-		position: relative;
-		z-index: 10;
+.container {
+	@include container;
 
-		&.dark {
-			background-color: $color-dark-opacity;
-		}
+	position: relative;
+}
 
-		&.light {
-			background-color: $color-light-opacity;
-		}
+.projectsContainer {
+	@include display-flex;
+
+	width: 100vw;
+	height: 100vh;
+	padding: 0.8rem;
+	position: relative;
+	z-index: 10;
+
+	&.dark {
+		background-color: $color-dark-opacity;
 	}
 
-	.projectsItem {
-		@include display-flex;
+	&.light {
+		background-color: $color-light-opacity;
+	}
+}
 
-		width: 30rem;
+.projectsItem {
+	@include display-flex;
+
+	width: 30rem;
+	height: 30rem;
+
+	&.dark {
+		background-color: $color-light-opacity-07;
+	}
+
+	&.light {
+		background-color: $color-dark-opacity-07;
+	}
+
+	.projectsImg {
+		width: 20rem;
 		height: 30rem;
 
 		&.dark {
-			background-color: $color-light-opacity-07;
+			background-color: $color-light;
+			border: 0.4rem solid $color-dark-opacity;
 		}
 
 		&.light {
-			background-color: $color-dark-opacity-07;
+			background-color: $color-dark;
+			border: 0.4rem solid $color-light-opacity;
 		}
 
-
-		.projectsImg {
-			width: 20rem;
-			height: 30rem;
-
-			&.dark {
-				background-color: $color-light;
-				border: .4rem solid $color-dark-opacity;
-			}
-
-			&.light {
-				background-color: $color-dark;
-				border: .4rem solid $color-light-opacity;
-			}
-
-
-			&:nth-child(2) {
+		&:nth-child(2) {
 			margin: 0rem 1rem;
 		}
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}	
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
+}
 
-	.title {
-		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
-		font-weight: 900;
-		display: inline;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		letter-spacing: 0.5rem;
-		z-index: 1;
-		background: none !important;
+.title {
+	@include font;
 
-		&.dark {
-			color: $color-dark-opacity;
-		}
+	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
+	font-weight: 900;
+	display: inline;
+	z-index: 1;
+	letter-spacing: 1rem;
 
-		&.light {
-			color: $color-light-opacity;
-		}
+	&.dark {
+		@include light-theme;
 	}
 
+	&.light {
+		@include dark-theme;
+	}
+}

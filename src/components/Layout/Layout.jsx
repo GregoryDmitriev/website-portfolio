@@ -9,9 +9,25 @@ import { Burger } from '../index'
 gsap.registerPlugin(ScrollTrigger)
 
 const Layout = () => {
+	const menuRef = useRef(null)
+
+	const location = useLocation()
+	const [closeMenu, setCloseMenu] = useState(location.pathname === '/')
+
+	useGSAP(() => {
+		if (location.pathname === '/') {
+			ScrollTrigger.create({
+				trigger: '#skills',
+				start: 'top 5%',
+				onEnter: () => setCloseMenu(false),
+				onLeaveBack: () => setCloseMenu(true),
+			})
+		}
+	}, [location.pathname])
+
 	return (
 		<>
-			<Burger  />
+			{!closeMenu && <Burger useRef={menuRef} />}
 			<Outlet />
 		</>
 	)

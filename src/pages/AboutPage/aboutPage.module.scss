@@ -5,9 +5,10 @@
 }
 
 .title {
-	@include fontBold;
+	@include font;
 
 	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
+	font-weight: 900;
 	display: inline;
 	z-index: 1;
 	letter-spacing: 1rem;

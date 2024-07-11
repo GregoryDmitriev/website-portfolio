@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
@@ -32,16 +32,18 @@ const MainPage = () => {
 		}
 	}, [])
 
-	// scroll to hash
+	// Scroll to hash
 	const { hash } = useLocation()
-	useEffect(() => {
+	const navigate = useNavigate()
+
+	const handleHashChange = () => {
 		if (hash) {
 			const element = document.getElementById(hash.substring(1))
 			if (element) {
 				element.scrollIntoView({ behavior: 'smooth' })
 			}
 		}
-	}, [hash])
+	}
 
 	const sections = ['home', 'about', 'skills', 'projects', 'contact']
 	useEffect(() => {
@@ -54,8 +56,9 @@ const MainPage = () => {
 					element.offsetTop <= scrollPosition &&
 					element.offsetTop + element.offsetHeight > scrollPosition
 				) {
-					if (location.hash.substring(1) !== section) {
-						history.replaceState(null, null, `#${section}`)
+					if (hash.substring(1) !== section) {
+						// Проверяем текущий хэш
+						navigate(`#${section}`)
 					}
 				}
 			}
@@ -65,32 +68,65 @@ const MainPage = () => {
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
 		}
+	}, [navigate, sections, hash]) // Добавляем зависимость hash
+
+	const containerRef = useRef(null)
+	useGSAP(() => {
+		const container = containerRef.current
+		const sections = gsap.utils.toArray('section.horizontal')
+
+		gsap.to(sections, {
+			xPercent: -100 * (sections.length - 1),
+			ease: 'none',
+			scrollTrigger: {
+				trigger: container,
+				pin: true,
+				scrub: 0.5,
+				start: 'top top',
+				end: () => `+=${container.scrollWidth - window.innerWidth}`,
+				onRefresh: () => {
+					handleHashChange()
+					ScrollTrigger.update()
+				},
+			},
+		})
 	}, [])
 
+	useEffect(() => {
+		handleHashChange()
+	}, [hash])
+
 	return (
-		<main className={`${styles.main} ${styleTheme}`}>
-			
-				{windowWidth >= 900 && <CustomCursor />}
+		<main
+			className={`${styles.main} ${styleTheme}`}
+			style={{ overflow: 'hidden' }}
+		>
+			{windowWidth >= 900 && <CustomCursor />}
 
-				<div className={styles.content}>
-					<section id='home'>
-						<HomePage />
-					</section>
+			<div
+				className={styles.container}
+				ref={containerRef}
+				style={{ display: 'flex', flexWrap: 'nowrap' }}
+			>
+				<section id='home' className='horizontal'>
+					<HomePage />
+				</section>
 
-					<section id='about'>
-						<AboutPage />
-					</section>
-					<section id='skills'>
-						<SkillsPage />
-					</section>
-					<section id='projects'>
-						<ProjectsPage />
-					</section>
-					<section id='contact'>
-						<ContactPage />
-					</section>
-				</div>
-			
+				<section id='about' className='horizontal'>
+					<AboutPage />
+				</section>
+			</div>
+
+			<section id='skills'>
+				<SkillsPage />
+			</section>
+
+			<section id='projects'>
+				<ProjectsPage />
+			</section>
+			<section id='contact'>
+				<ContactPage />
+			</section>
 		</main>
 	)
 }

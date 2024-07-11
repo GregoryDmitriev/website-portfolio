@@ -57,10 +57,11 @@ const ProjectsPage = () => {
 
 	return (
 		<div className={styles.container}>
-			<Icon
+			{/* <Icon
 				id='icon-gear-full'
 				className={`${styles.gearFull} ${styleTheme}`}
-			/>
+			/> */}
+			
 			{/* 
 				<div
 					className={`${styles.projectsContainer} ${styleTheme}`}

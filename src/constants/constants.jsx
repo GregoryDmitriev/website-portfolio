@@ -7,27 +7,27 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 const NAV_LINKS = [
 	{
-		title: 'Home',
+		title: 'HOME',
 		to: '/#home',
 		icon: <FaHome size={26} />,
 	},
 	{
-		title: 'About',
+		title: 'ABOUT',
 		to: '/#about',
 		icon: <IoIosPerson size={26} />,
 	},
 	{
-		title: 'Skills',
+		title: 'SKILLS',
 		to: '/#skills',
 		icon: <BsFillMortarboardFill size={26} />,
 	},
 	{
-		title: 'Projects',
+		title: 'PROJECTS',
 		to: '/#projects',
 		icon: <FaCode size={26} />,
 	},
 	{
-		title: 'Contact',
+		title: 'CONTACT',
 		to: '/#contact',
 		icon: <HiOutlineMail size={26} />,
 	},
