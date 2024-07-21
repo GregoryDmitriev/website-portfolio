@@ -6,41 +6,7 @@
 	.inkPen {
 		position: relative;
 		z-index: 10;
-		// animation-name: active-ink-pen;
-		// animation-fill-mode: forwards;
-		// animation-duration: 3s;
-		// animation-timing-function: ease-in-out;
-		// animation-iteration-count: infinite;
-
-		// stroke-dasharray: 100;
-		// stroke-dashoffset: 100;
-
-		// @keyframes active-ink-pen {
-
-		//   100% {
-		//     stroke:$active-color;
-		//     stroke-dashoffset: 0;
-		//   }
-		// }
 	}
-
-	// .title {
-	// 	font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
-	// 	font-weight: 900;
-	// 	display: inline;
-	// 	position: absolute;
-	// 	letter-spacing: 1rem;
-	// 	z-index: 1;
-	// 	background: none !important;
-
-	// 	&.dark {
-	// 		color: $color-light-opacity-07;
-	// 	}
-
-	// 	&.light {
-	// 		color: $color-dark-opacity-07;
-	// 	}
-	// }
 
 	@keyframes draw-text {
 		0% {
@@ -83,21 +49,20 @@
 			width: 40%;
 			position: relative;
 
-
 			.heroContact,
 			img {
-				width: 630px;
-				height: 770px;
+				width: clamp(27.5rem, 24.211rem + 17.544vw, 40rem);
+				height: clamp(33.75rem, 30.461rem + 17.544vw, 46.25rem);
 				position: absolute;
-				right: 0;
-				bottom: 0;
+				right: -6.875rem;
+				bottom: -1rem;
 				z-index: 1;
 				transition: all 0.5s ease-in-out;
 			}
 
 			.heroContact {
 				opacity: 1;
-				
+
 				&.light {
 					fill: $color-dark-opacity;
 				}

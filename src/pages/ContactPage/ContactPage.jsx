@@ -10,6 +10,9 @@ import { ThemeContext } from '@/providers'
 import { NAV_LINKS } from '@/constants'
 
 const ContactPage = () => {
+	const [theme] = useContext(ThemeContext)
+	const styleTheme = theme === 'light' ? styles.light : styles.dark
+
 	const textRef = useRef(null)
 
 	useGSAP(() => {
@@ -24,16 +27,13 @@ const ContactPage = () => {
 		})
 	}, [])
 
-	const [theme] = useContext(ThemeContext)
-	const styleTheme = theme === 'light' ? styles.light : styles.dark
-
 	return (
 		<div className={styles.container}>
 			<h3 className={styles.title}>Get in touch</h3>
 			<div className={styles.columnContainer}>
 				<div className={styles.leftColumn}></div>
 				<div className={styles.rightColumn}>
-					<Link to={NAV_LINKS[1].to}>
+					<Link to={NAV_LINKS[0].to}>
 						<Icon
 							id='hero-contact'
 							className={`${styles.heroContact} ${styleTheme}`}

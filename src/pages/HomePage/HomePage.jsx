@@ -20,9 +20,12 @@ const HomePage = () => {
 	const contentRef = useRef(null)
 
 	useGSAP(() => {
-		
-	},[])
-
+		gsap.fromTo(
+			contentRef.current,
+			{ x: '200%' },
+			{ x: '-10%', duration: 5, ease: 'power3.out' }
+		)
+	}, [])
 
 	return (
 		<div className={styles.container} ref={containerRef}>
@@ -37,18 +40,23 @@ const HomePage = () => {
 					<MdStarRate />
 					<MdStarRate />
 				</span>
-				<h1 className={styleTheme}>WANTED</h1>
+				<h2 className={styleTheme}>WANTED</h2>
 				<p>by IT DEPARTMENT</p>
 			</div>
 
 			<Link className={styles.heroLink} to={NAV_LINKS[1].to}>
-				<Icon id='hero-home' className={`${styles.heroHome} ${styleTheme}`} />
+				<Icon id='hero' className={`${styles.hero} ${styleTheme}`} aria-label='hero' />
 			</Link>
 
-			<div className={`${styles.tablet} ${styleTheme}`}>
-				<Link to={NAV_LINKS[1].to}>GREGORY DMITRIEV</Link>
+			<Icon id="city" className={styles.city} aria-label="city" />
 
-				<span>Front-end developer</span>
+			<div className={`${styles.title} ${styleTheme}`} ref={contentRef}>
+				<Icon id='car' className={styles.car} aria-label='car' />
+
+				<div className={styles.titleText}>
+					<h1>GREGORY DMITRIEV</h1>
+					<span>Front-end developer</span>
+				</div>
 			</div>
 		</div>
 	)

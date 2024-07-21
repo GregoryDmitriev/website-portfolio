@@ -8,27 +8,27 @@ import { HiOutlineMail } from 'react-icons/hi'
 const NAV_LINKS = [
 	{
 		title: 'HOME',
-		to: '/#home',
+		to: '#home',
 		icon: <FaHome size={26} />,
 	},
 	{
 		title: 'ABOUT',
-		to: '/#about',
+		to: '#about',
 		icon: <IoIosPerson size={26} />,
 	},
 	{
 		title: 'SKILLS',
-		to: '/#skills',
+		to: '#skills',
 		icon: <BsFillMortarboardFill size={26} />,
 	},
 	{
 		title: 'PROJECTS',
-		to: '/#projects',
+		to: '#projects',
 		icon: <FaCode size={26} />,
 	},
 	{
 		title: 'CONTACT',
-		to: '/#contact',
+		to: '#contact',
 		icon: <HiOutlineMail size={26} />,
 	},
 ]

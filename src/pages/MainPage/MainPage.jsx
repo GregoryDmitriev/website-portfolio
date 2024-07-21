@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { createRef, useContext, useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -14,6 +14,7 @@ import {
 } from '../index'
 import { ThemeContext } from '@/providers'
 import { CustomCursor } from '@/components'
+import { usePageEffects } from '@/hooks/usePageEffects'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,80 +22,8 @@ const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth)
-		}
-		window.addEventListener('resize', handleResize)
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-	}, [])
-
-	// Scroll to hash
-	const { hash } = useLocation()
-	const navigate = useNavigate()
-
-	const handleHashChange = () => {
-		if (hash) {
-			const element = document.getElementById(hash.substring(1))
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth' })
-			}
-		}
-	}
-
 	const sections = ['home', 'about', 'skills', 'projects', 'contact']
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollPosition = window.scrollY + window.innerHeight / 2
-			for (const section of sections) {
-				const element = document.getElementById(section)
-				if (
-					element &&
-					element.offsetTop <= scrollPosition &&
-					element.offsetTop + element.offsetHeight > scrollPosition
-				) {
-					if (hash.substring(1) !== section) {
-						// Проверяем текущий хэш
-						navigate(`#${section}`)
-					}
-				}
-			}
-		}
-
-		window.addEventListener('scroll', handleScroll)
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [navigate, sections, hash]) // Добавляем зависимость hash
-
-	const containerRef = useRef(null)
-	useGSAP(() => {
-		const container = containerRef.current
-		const sections = gsap.utils.toArray('section.horizontal')
-
-		gsap.to(sections, {
-			xPercent: -100 * (sections.length - 1),
-			ease: 'none',
-			scrollTrigger: {
-				trigger: container,
-				pin: true,
-				scrub: 0.5,
-				start: 'top top',
-				end: () => `+=${container.scrollWidth - window.innerWidth}`,
-				onRefresh: () => {
-					handleHashChange()
-					ScrollTrigger.update()
-				},
-			},
-		})
-	}, [])
-
-	useEffect(() => {
-		handleHashChange()
-	}, [hash])
+	const { windowWidth, sectionRefs } = usePageEffects(sections)
 
 	return (
 		<main
@@ -103,28 +32,26 @@ const MainPage = () => {
 		>
 			{windowWidth >= 900 && <CustomCursor />}
 
-			<div
-				className={styles.container}
-				ref={containerRef}
-				style={{ display: 'flex', flexWrap: 'nowrap' }}
-			>
-				<section id='home' className='horizontal'>
-					<HomePage />
-				</section>
+			<section id='home' ref={sectionRefs.current[0]}>
+				<HomePage />
+			</section>
 
-				<section id='about' className='horizontal'>
-					<AboutPage />
-				</section>
-			</div>
+			<section id='about' ref={sectionRefs.current[1]}>
+				<AboutPage />
+			</section>
 
-			<section id='skills'>
+			<section id='skills' ref={sectionRefs.current[2]} >
 				<SkillsPage />
 			</section>
-
-			<section id='projects'>
+			<section
+				id='projects'
+				ref={sectionRefs.current[3]}
+				
+			>
 				<ProjectsPage />
 			</section>
-			<section id='contact'>
+
+			<section id='contact' ref={sectionRefs.current[4]}>
 				<ContactPage />
 			</section>
 		</main>

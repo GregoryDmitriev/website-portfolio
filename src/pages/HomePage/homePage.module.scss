@@ -8,14 +8,17 @@
 
 	nav {
 		@include display-flex;
+		@include fontSuperbastone;
 
 		position: absolute;
 		top: 2.5rem;
 		left: 2rem;
 
 		a {
-			font-size: .8rem;
-			
+			font-size: 1rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+
 			&:first-of-type {
 				padding-right: 1rem;
 			}
@@ -34,9 +37,11 @@
 		min-width: 100%;
 		position: absolute;
 
-		h1 {
+		h2 {
+			@include fontUltra;
+
 			display: inline-block;
-			font-size: clamp(5rem, -2.143rem + 19.048vw, 15rem);
+			font-size: clamp(2.2rem, -1.168rem + 17.965vw, 15rem);
 			font-weight: 900;
 			letter-spacing: clamp(1rem, -1.143rem + 5.714vw, 4rem);
 			margin-bottom: 1rem;
@@ -55,24 +60,20 @@
 		}
 
 		p {
-			font-family: 'Smokum', serif;
+			font-family: 'fontCDNBigboy';
 			font-size: 1.3rem;
 			letter-spacing: 0.6rem;
+			transform: translateX(30rem);
 		}
 	}
 
-	.heroLink{
+	.heroLink {
 		display: flex;
 		justify-content: center;
 	}
 
-	.heroHome {
-		width: 800px;
-		height: 896px;
-		position: absolute;
-		z-index: 2;
-		bottom: 3rem;
-
+	.hero,
+	.city {
 		&.light {
 			fill: $color-dark-opacity;
 		}
@@ -82,36 +83,58 @@
 		}
 	}
 
-	.tablet {
-		@include display-flex;
+	.hero {
+		width: clamp(21.25rem, 13.684rem + 40.351vw, 50rem);
+		height: clamp(27.25rem, 19.684rem + 40.351vw, 56rem);
+		position: absolute;
+		z-index: 2;
+		bottom: 3rem;
+	}
 
-		flex-direction: column;
-		font-family: 'Smokum', serif;
+	.city {
+		width: 37rem;
+		height: 25rem;
+		transform: translate(-42rem, 13rem);
+	}
+
+	.title {
+		@include display-flex;
+		@include fontSuperbastone;
+
 		letter-spacing: 2px;
 		width: clamp(21rem, 13.6056rem + 31.5493vw, 50rem);
 		position: absolute;
-		bottom: 2rem;
+		bottom: 0rem;
 		text-align: right;
 		font-size: clamp(1.125rem, 0.768rem + 0.952vw, 1.625rem);
 		letter-spacing: 0.3rem;
 		padding: 0.5rem;
 		z-index: 10;
 
-		a {
-			font-size: 2rem;
-			font-weight: 600;
-			padding: 0.5rem 0;
-			cursor: pointer;
-
-			&:hover {
-				color: $active-color;
-			}
+		.car {
+			transform: translateX(-25rem);
+			fill: $active-color;
 		}
 
-		span {
-			font-size: 1.3rem;
-			font-weight: 200;
-			letter-spacing: 0.6rem;
+		.titleText {
+			@include display-flex;
+			@include fontRusso;
+
+			flex-direction: column;
+			width: 62rem;
+
+			h1 {
+				font-size: 3rem;
+				font-weight: 800;
+				letter-spacing: 0.4rem;
+				color: $active-color;
+			}
+
+			span {
+				font-size: 1.2rem;
+				font-weight: 200;
+				letter-spacing: 0.6rem;
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-@import '../../../styles/index';
+@import '@/styles/index';
 
 .languageButton {
 	@include display-flex;
@@ -13,5 +13,13 @@
 	}
 	&.light {
 		@include light-theme;
+	}
+
+	p {
+		@include fontSuperbastone;
+
+		font-size: 1rem;
+		font-weight: 500;
+		letter-spacing: 0.1rem;
 	}
 }

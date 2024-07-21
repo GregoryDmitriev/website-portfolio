@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Smokum&display=swap');
-
+@import url('https://db.onlinewebfonts.com/c/02372d276544c792b2118436e0e97f2d?family=Superbastone+W01+Regular');
+@import url('https://db.onlinewebfonts.com/c/e991cc6c106fcd44cd59aa915d9b8842?family=Bigboy+Fifty+W00+Regular');
+@import url('https://db.onlinewebfonts.com/c/5059fdf84027a4867da51a3fe4d73df7?family=Chlorine+Sans+W00+Regular');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Ultra&display=swap');
 @mixin display-flex {
 	display: flex;
 	flex-direction: row;
@@ -9,7 +11,7 @@
 
 @mixin container {
 	@include display-flex;
-	@include font;
+	@include fontChlorine;
 
 	flex-direction: column;
 	width: 100%;
@@ -22,7 +24,7 @@
 	@include display-flex;
 	width: 100vw;
 	height: 100vh;
-	flex-shrink: 0;
+	padding: 1rem 0;
 }
 
 @mixin dark-theme {
@@ -37,8 +39,22 @@
 	fill: $color-dark;
 }
 
-@mixin font {
-	font-family: 'Holtwood One SC', serif;
-	font-weight: 400;
+@mixin fontSuperbastone {
+	font-family: 'Superbastone W01 Bold';
 }
 
+@mixin fontBigboy {
+	font-family: 'Bigboy Fifty W00 Regular';
+}
+
+@mixin fontChlorine {
+	font-family: 'Chlorine Sans W00 Regular';
+}
+
+@mixin fontUltra {
+	font-family: 'Ultra', serif;
+}
+
+@mixin fontRusso {
+	font-family: 'Russo One', sans-serif;
+}

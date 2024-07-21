@@ -10,24 +10,34 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Layout = () => {
 	const menuRef = useRef(null)
-
 	const location = useLocation()
-	const [closeMenu, setCloseMenu] = useState(location.pathname === '/')
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	useGSAP(() => {
-		if (location.pathname === '/') {
-			ScrollTrigger.create({
-				trigger: '#skills',
-				start: 'top 5%',
-				onEnter: () => setCloseMenu(false),
-				onLeaveBack: () => setCloseMenu(true),
-			})
+		setIsMenuOpen(location.hash !== '#home')
+
+		ScrollTrigger.create({
+			trigger: '#about',
+			start: 'top 5%',
+			onEnter: () => setIsMenuOpen(false),
+			onLeaveBack: () => setIsMenuOpen(true),
+		})
+
+		return () => {
+			ScrollTrigger.getAll().forEach(trigger => trigger.kill())
 		}
 	}, [location.pathname])
 
 	return (
 		<>
-			{!closeMenu && <Burger useRef={menuRef} />}
+			{location.hash !== '#home' && (
+				<Burger
+					menuRef={menuRef}
+					setIsMenuOpen={setIsMenuOpen}
+					isMenuOpen={isMenuOpen}
+				/>
+			)}
+
 			<Outlet />
 		</>
 	)

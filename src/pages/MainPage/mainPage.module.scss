@@ -1,33 +1,10 @@
 @import '@/styles/index';
 
 .main {
-	display: block;
-	padding: 0 1rem;
-
-	@include respond(tab-land) {
-		padding: 0 1rem;
-	}
-
-	@include respond(tab-port) {
-		padding: 0 1rem;
-	}
-
-	@include respond(phone) {
-		padding: 0 1rem;
-	}
-
-	@include respond(sm-phone) {
-		padding: 0 1rem;
-	}
-
 	&.dark {
 		@include dark-theme;
 	}
 	&.light {
 		@include light-theme;
-	}
-
-	section {
-		flex-shrink: 0;
 	}
 }

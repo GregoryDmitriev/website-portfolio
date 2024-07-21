@@ -3,14 +3,11 @@
 .container {
 	@include container;
 
-
 	.title {
 		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
 		font-weight: 900;
 		display: inline;
-		position: absolute;
 		letter-spacing: 1rem;
-		z-index: 1;
 
 		&.dark {
 			@include dark-theme;
@@ -20,4 +17,5 @@
 			@include light-theme;
 		}
 	}
+
 }

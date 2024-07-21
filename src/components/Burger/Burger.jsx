@@ -5,15 +5,20 @@ import { useId } from 'react-id-generator'
 import styles from './burger.module.scss'
 import { ThemeContext } from '@/providers'
 import { NAV_LINKS_BURGER } from '@/constants/index'
+import { Icon } from '../Icon'
 
-const Burger = () => {
+const Burger = ({ isMenuOpen, setIsMenuOpen }) => {
 	const [theme] = useContext(ThemeContext)
-	const [activeStates, setActiveStates] = useState([true, true, true, true])
-
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
+	const [activeStates, setActiveStates] = useState([true, true, true, true])
 	const handleEvent = () => {
 		setActiveStates(activeStates.map(state => !state))
+	}
+
+	const handleLinkClick = () => {
+		setActiveStates([true, true, true, true])
+		console.log(isMenuOpen)
 	}
 
 	return (
@@ -29,7 +34,9 @@ const Burger = () => {
 							opacity: activeStates[index] ? '0' : '1',
 						}}
 					>
-						<NavLink to={link.to}>{link.icon}</NavLink>
+						<NavLink to={link.to} onClick={handleLinkClick}>
+							{link.icon}
+						</NavLink>
 					</div>
 				)
 			})}
@@ -45,10 +52,13 @@ const Burger = () => {
 					onClick={handleEvent}
 					onKeyUp={handleEvent}
 					onKeyDown={handleEvent}
+					className={`${styles.burgerIcon} ${styleTheme} `}
 				>
-					<div className={styleTheme} />
-					<div className={styleTheme} />
-					<div className={styleTheme} />
+					{activeStates.every(state => !state) ? (
+						<Icon id='openBurger' />
+					) : (
+						<Icon id='burger' />
+					)}
 				</label>
 			</div>
 		</div>

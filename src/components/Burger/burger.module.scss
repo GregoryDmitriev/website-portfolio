@@ -60,7 +60,7 @@
 			@include display-flex;
 
 			&:hover {
-				color: $hover-color;
+				color: $active-color;
 			}
 
 			svg {
@@ -122,29 +122,13 @@
 			&.light {
 				@include dark-theme;
 			}
-
-			&:first-child {
-				width: 22px;
-			}
-
-			&:nth-child(2) {
-				width: 15px;
-			}
-
-			&:last-child {
-				width: 30px;
-				margin-bottom: 0;
-			}
 		}
 	}
 
-	.menuCheckbox:checked + label {
-		transform: translateY(-50%) rotateZ(-90deg);
-
-		div {
-			width: 2px;
-			margin-left: 12px;
-			margin-bottom: 3px;
+	label {
+		svg {
+			width: 2rem;
+			height: 2rem;
 		}
 	}
 
@@ -160,7 +144,7 @@
 		@include display-flex;
 
 		&:hover {
-			color: $hover-color;
+			color: $active-color;
 		}
 	}
 }

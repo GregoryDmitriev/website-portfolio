@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react'
-import { ThemeContext } from '@/providers'
+import { Link } from 'react-router-dom'
 
 import styles from './languageButton.module.scss'
+import { ThemeContext } from '@/providers'
 
 const LanguageButton = () => {
 	const [language, setLanguage] = useState('EN')
 
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
-	
 
 	const handleClick = () => {
 		setLanguage(language === 'EN' ? 'UA' : 'EN')

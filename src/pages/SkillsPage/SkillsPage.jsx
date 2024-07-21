@@ -4,8 +4,8 @@ import { useGSAP } from '@gsap/react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 import styles from './skillsPage.module.scss'
-import { Gears } from './Gears'
 import { ThemeContext } from '@/providers'
+import { Icon } from '@/components/Icon'
 
 gsap.registerPlugin(ScrollTrigger)
 const SkillsPage = () => {
@@ -14,20 +14,15 @@ const SkillsPage = () => {
 
 	const titleRef = useRef(null)
 
-	useGSAP(() => {
-	
-		
-		
-	}, [])
+	useGSAP(() => {}, [])
 
 	return (
 		<div className={styles.container}>
-			
-			<h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
+			{/* <h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
 				SKILLS
-			</h2>
+			</h2> */}
 
-			{/* <Gears /> */}
+			
 		</div>
 	)
 }
