@@ -3,6 +3,20 @@
 .container {
 	@include container;
 
+	padding: 0;
+
+	backdrop-filter: blur(5px);
+	mask-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 1) 30%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 1) 30%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
 	.inkPen {
 		position: relative;
 		z-index: 10;
@@ -19,72 +33,129 @@
 		}
 	}
 
-	.title {
-		fill: none;
-		stroke: currentColor;
-		stroke-width: 2;
-		stroke-dasharray: 100;
-		stroke-dashoffset: 100;
-		animation: draw-text 2s forwards;
+	h3 {
+		@include fontDancingScript;
+
+		cursor: pointer;
+		font-size: clamp(3rem, 2rem + 4.444vw, 6rem);
+		font-weight: 400;
+		letter-spacing: 0.1rem;
+		position: absolute;
+		z-index: 2;
+		top: 20%;
+		left: 50%;
+		transform: translate(-40%, -20%);
+		width: 80%;
+
+		&.light {
+			color: $color-dark-opacity;
+		}
+
+		&.dark {
+			color: $color-light-opacity;
+		}
 	}
-
-	.columnContainer {
-		@include display-flex;
-
+	.heroContainer {
 		width: 100%;
 		height: 100%;
+		position: absolute;
+		z-index: 1;
+		top: 0rem;
+		right: 0rem;
 
-		.leftColumn,
-		.rightColumn {
-			@include display-flex;
+		backdrop-filter: blur(5px);
+		mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 1) 30%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 1) 30%,
+			rgba(0, 0, 0, 0) 100%
+		);
 
-			height: 100%;
-		}
+		.heroContact {
+			opacity: 1;
 
-		.leftColumn {
-			width: 60%;
-		}
+			&.light {
+				fill: $color-dark-opacity;
+			}
 
-		.rightColumn {
-			width: 40%;
-			position: relative;
+			&.dark {
+				fill: $color-black;
+			}
 
-			.heroContact,
-			img {
-				width: clamp(27.5rem, 24.211rem + 17.544vw, 40rem);
-				height: clamp(33.75rem, 30.461rem + 17.544vw, 46.25rem);
-				position: absolute;
-				right: -6.875rem;
-				bottom: -1rem;
-				z-index: 1;
+			&:hover {
+				opacity: 0;
 				transition: all 0.5s ease-in-out;
 			}
+		}
 
-			.heroContact {
+		img {
+			opacity: 0;
+
+			&:hover {
 				opacity: 1;
+				transition: all 0.5s ease-in-out;
+			}
+		}
 
-				&.light {
-					fill: $color-dark-opacity;
-				}
+		.heroContact,
+		img {
+			width: clamp(23rem, 17.333rem + 25.185vw, 40rem);
+			height: clamp(28rem, 21.917rem + 27.037vw, 46.25rem);
+			position: absolute;
+			right: -2rem;
+			bottom: 0;
+			z-index: 1;
+			transition: all 0.5s ease-in-out;
 
-				&.dark {
-					fill: $color-light-opacity;
-				}
-
-				&:hover {
-					opacity: 0;
-					transition: all 0.5s ease-in-out;
-				}
+			&.smallHero_h400 {
+				width: 15rem !important;
+				height: 20rem !important;
 			}
 
-			img {
-				opacity: 0;
-
-				&:hover {
-					opacity: 1;
-					transition: all 0.5s ease-in-out;
-				}
+			&.smallHero_h500 {
+				width: 20rem !important;
+				height: 23rem !important;
 			}
+
+			&.smallHero_h600 {
+				width: 30rem !important;
+				height: 35rem !important;
+				right: -3rem !important;
+			}
+		}
+	}
+
+	.buttonHome {
+		@include fontRaleway;
+
+		font-size: 0.8rem;
+		font-weight: 300;
+		letter-spacing: 0.1rem;
+		transition: all 0.5s ease-in-out;
+		border: none;
+		background: none;
+		cursor: pointer;
+
+		position: absolute;
+		bottom: 2rem;
+		left: 4rem;
+		z-index: 2;
+		transform: translate(-50%, 0);
+
+		&.light {
+			color: $color-dark-opacity;
+		}
+
+		&.dark {
+			color: $color-light-opacity;
+		}
+
+		&:hover {
+			color: $active-color;
 		}
 	}
 }

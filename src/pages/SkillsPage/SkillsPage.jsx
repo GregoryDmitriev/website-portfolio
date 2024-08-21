@@ -7,7 +7,7 @@ import styles from './skillsPage.module.scss'
 import { ThemeContext } from '@/providers'
 import { Icon } from '@/components/Icon'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 const SkillsPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
@@ -18,9 +18,9 @@ const SkillsPage = () => {
 
 	return (
 		<div className={styles.container}>
-			{/* <h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
+			<h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
 				SKILLS
-			</h2> */}
+			</h2>
 
 			
 		</div>

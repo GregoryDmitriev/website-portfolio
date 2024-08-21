@@ -7,16 +7,11 @@
 	display: block;
 	width: 60px;
 	height: 60px;
-	background-color: transparent;
 	border-radius: 50%;
 	z-index: 20;
 
-	&.dark {
-		@include dark-theme;
-	}
-
-	&.light {
-		@include light-theme;
+	&.hidden {
+		display: none;
 	}
 
 	.item1,
@@ -36,12 +31,14 @@
 		background: none;
 		transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-		&.dark {
-			@include dark-theme;
+		&.light {
+			background-color: $color-light-opacity;
+			color: $color-dark-opacity;
 		}
 
-		&.light {
-			@include light-theme;
+		&.dark {
+			background-color: $color-dark-opacity;
+			color: $color-light-opacity;
 		}
 
 		&.item2 {
@@ -84,6 +81,16 @@
 	line-height: 120px;
 	cursor: pointer;
 	position: fixed;
+
+	&.light {
+		background-color: $color-light-opacity;
+		color: $color-dark-opacity;
+	}
+
+	&.dark {
+		background-color: $color-dark-opacity;
+		color: $color-light-opacity;
+	}
 
 	.menuCheckbox {
 		display: none;
@@ -130,14 +137,13 @@
 			width: 2rem;
 			height: 2rem;
 		}
-	}
+		&.light {
+			fill: $color-dark-opacity;
+		}
 
-	&.dark {
-		@include dark-theme;
-	}
-
-	&.light {
-		@include light-theme;
+		&.dark {
+			fill: $color-light-opacity;
+		}
 	}
 
 	a {

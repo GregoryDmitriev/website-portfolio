@@ -3,7 +3,9 @@
 .container {
 	@include container;
 
-	.title {
+	h2 {
+		@include fontRaleway;
+
 		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
 		font-weight: 900;
 		display: inline;
@@ -17,5 +19,4 @@
 			@include light-theme;
 		}
 	}
-
 }

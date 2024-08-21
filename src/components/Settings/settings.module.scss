@@ -2,12 +2,13 @@
 
 .settings {
 	@include display-flex;
+	@include fontRaleway;
 
 	font-size: 1.2rem;
 	min-width: 30px;
 	min-height: 30px;
 	position: fixed;
-	top: 2rem;
+	top: 1.85rem;
 	right: 1.3rem;
 	z-index: 200;
 
@@ -24,14 +25,7 @@
 			width: 2rem;
 			height: 2rem;
 			border-radius: 50%;
-
-			&.dark {
-				@include dark-theme;
-			}
-
-			&.light {
-				@include light-theme;
-			}
+			backdrop-filter: blur(5px);
 		}
 
 		.iconSettings {
@@ -40,12 +34,12 @@
 			animation: rotate 10s linear infinite;
 			background: none !important;
 
-			&.dark {
-				@include dark-theme;
+			&.light {
+				fill: $color-dark-opacity;
 			}
 
-			&.light {
-				@include light-theme;
+			&.dark {
+				fill: $color-light-opacity;
 			}
 		}
 
@@ -55,18 +49,12 @@
 			position: absolute;
 			right: 40px;
 			padding: 10px;
-			border-radius: 20px;
-
-			&.dark {
-				@include dark-theme;
-			}
-
-			&.light {
-				@include light-theme;
-			}
+			border-radius: 1.5rem;
+			backdrop-filter: blur(5px);
 
 			p,
 			svg {
+				transition: all 0.5s ease-in-out;
 				&:hover {
 					color: $active-color;
 				}

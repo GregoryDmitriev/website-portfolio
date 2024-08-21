@@ -7,7 +7,7 @@ import { ThemeContext } from '@/providers'
 import { NAV_LINKS_BURGER } from '@/constants/index'
 import { Icon } from '../Icon'
 
-const Burger = ({ isMenuOpen, setIsMenuOpen }) => {
+const Burger = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
@@ -18,11 +18,10 @@ const Burger = ({ isMenuOpen, setIsMenuOpen }) => {
 
 	const handleLinkClick = () => {
 		setActiveStates([true, true, true, true])
-		console.log(isMenuOpen)
 	}
 
 	return (
-		<div className={styles.burger}>
+		<div className={`${styles.burger} ${styleTheme}`}>
 			{NAV_LINKS_BURGER.map((link, index) => {
 				const [uniqueId] = useId()
 				return (

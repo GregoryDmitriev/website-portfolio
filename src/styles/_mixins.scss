@@ -1,7 +1,7 @@
 @import url('https://db.onlinewebfonts.com/c/02372d276544c792b2118436e0e97f2d?family=Superbastone+W01+Regular');
-@import url('https://db.onlinewebfonts.com/c/e991cc6c106fcd44cd59aa915d9b8842?family=Bigboy+Fifty+W00+Regular');
-@import url('https://db.onlinewebfonts.com/c/5059fdf84027a4867da51a3fe4d73df7?family=Chlorine+Sans+W00+Regular');
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @mixin display-flex {
 	display: flex;
 	flex-direction: row;
@@ -11,7 +11,7 @@
 
 @mixin container {
 	@include display-flex;
-	@include fontChlorine;
+	@include fontRaleway;
 
 	flex-direction: column;
 	width: 100%;
@@ -22,6 +22,7 @@
 
 @mixin section {
 	@include display-flex;
+
 	width: 100vw;
 	height: 100vh;
 	padding: 1rem 0;
@@ -39,22 +40,19 @@
 	fill: $color-dark;
 }
 
-@mixin fontSuperbastone {
-	font-family: 'Superbastone W01 Bold';
+// @mixin fontSuperbastone {
+// 	font-family: 'Superbastone W01 Bold';
+// }
+
+// @mixin fontRoboto {
+// 	font-family: 'Roboto', sans-serif;
+// }
+
+@mixin fontDancingScript {
+	font-family: 'Dancing Script', cursive;
 }
 
-@mixin fontBigboy {
-	font-family: 'Bigboy Fifty W00 Regular';
+@mixin fontRaleway {
+	font-family: 'Raleway', sans-serif;
 }
 
-@mixin fontChlorine {
-	font-family: 'Chlorine Sans W00 Regular';
-}
-
-@mixin fontUltra {
-	font-family: 'Ultra', serif;
-}
-
-@mixin fontRusso {
-	font-family: 'Russo One', sans-serif;
-}

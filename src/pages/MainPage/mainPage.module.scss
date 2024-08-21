@@ -1,6 +1,8 @@
 @import '@/styles/index';
 
 .main {
+	overflow: auto;
+
 	&.dark {
 		@include dark-theme;
 	}

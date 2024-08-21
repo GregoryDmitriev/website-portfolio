@@ -1,6 +1,4 @@
-import { useContext, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { MdStarRate } from 'react-icons/md'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,7 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import styles from './homePage.module.scss'
 import { ThemeContext } from '@/providers'
 import { Icon } from '@/components/Icon'
-import { NAV_LINKS } from '@/constants'
+import { Navigation } from '@/components'
+import { useScreenSizeClass } from '@/hooks/useScreenSizeClass '
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,46 +15,36 @@ const HomePage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
-	const containerRef = useRef(null)
-	const contentRef = useRef(null)
+	const titleRef = useRef(null)
+
+	const screenSizeClass = useScreenSizeClass(styles)
 
 	useGSAP(() => {
 		gsap.fromTo(
-			contentRef.current,
-			{ x: '200%' },
-			{ x: '-10%', duration: 5, ease: 'power3.out' }
+			titleRef.current,
+			{ scale: 0 },
+			{ scale: 1, duration: 2, ease: 'slow(.7, .7, false)' }
 		)
 	}, [])
 
 	return (
-		<div className={styles.container} ref={containerRef}>
-			<nav>
-				<Link to={NAV_LINKS[3].to}>{NAV_LINKS[3].title}</Link>
-				<Link to={NAV_LINKS[4].to}>{NAV_LINKS[4].title}</Link>
-			</nav>
+		<div className={styles.container}>
+			<Navigation />
 
-			<div className={`${styles.content} ${styleTheme}`} ref={contentRef}>
-				<span className={styles.stars}>
-					<MdStarRate />
-					<MdStarRate />
-					<MdStarRate />
-				</span>
-				<h2 className={styleTheme}>WANTED</h2>
-				<p>by IT DEPARTMENT</p>
+			<div className={styles.heroContainer}>
+				<div className={`${styles.heroBox} ${styleTheme} `}>
+					<Icon
+						id='hero'
+						className={`${styles.heroItem} ${styleTheme} ${screenSizeClass}`}
+						aria-label='hero'
+					/>
+				</div>
 			</div>
 
-			<Link className={styles.heroLink} to={NAV_LINKS[1].to}>
-				<Icon id='hero' className={`${styles.hero} ${styleTheme}`} aria-label='hero' />
-			</Link>
-
-			<Icon id="city" className={styles.city} aria-label="city" />
-
-			<div className={`${styles.title} ${styleTheme}`} ref={contentRef}>
-				<Icon id='car' className={styles.car} aria-label='car' />
-
+			<div className={`${styles.titleContainer} ${styleTheme}`} ref={titleRef}>
 				<div className={styles.titleText}>
-					<h1>GREGORY DMITRIEV</h1>
-					<span>Front-end developer</span>
+					<h1>Gregory Dmitriev</h1>
+					<span className={styleTheme}>Front-end developer</span>
 				</div>
 			</div>
 		</div>

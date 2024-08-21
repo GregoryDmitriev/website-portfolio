@@ -9,7 +9,7 @@ import { ThemeContext } from '@/providers'
 import { PROJECTS } from '@/constants'
 import { Icon } from '@/components/Icon'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 const ProjectsPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark

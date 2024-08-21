@@ -1,4 +1,8 @@
-* {
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	outline: transparent;
 	-webkit-tap-highlight-color: transparent;
@@ -33,9 +37,12 @@ video {
 
 html,
 body {
-	width: 100vw;
-	scroll-behavior: smooth;
+	width: 100%;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
+	position: relative;
+	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
 
@@ -142,7 +149,7 @@ textarea {
 	color: #222;
 }
 
-img {
+ audio, canvas, iframe, img, svg, video, picture, figure {
 	vertical-align: middle;
 }
 
@@ -152,4 +159,25 @@ textarea {
 
 svg {
 	cursor: pointer;
+}
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+	min-height: 100vh;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
 }

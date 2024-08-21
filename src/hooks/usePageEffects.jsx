@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef, createRef } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const usePageEffects = sections => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-	const { hash } = useLocation()
-	const navigate = useNavigate()
+	const location = useLocation()
 	const sectionRefs = useRef(sections.map(() => createRef()))
 
 	useEffect(() => {
@@ -18,26 +17,24 @@ const usePageEffects = sections => {
 	}, [])
 
 	useEffect(() => {
-		const handleHashChange = () => {
-			if (hash) {
-				const element = document.getElementById(hash.substring(1))
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' })
-				}
+		const sectionId = location.pathname.substring(1)
+		if (sectionId) {
+			const element = document.getElementById(sectionId)
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' })
 			}
 		}
-
-		handleHashChange()
-	}, [hash])
+	}, [location.pathname])
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			entries => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						const sectionId = entry.target.id
-						if (hash.substring(1) !== sectionId) {
-							navigate(`#${sectionId}`)
+						const sectionId = entry.target.getAttribute('id')
+						if (sectionId && location.pathname !== `/${sectionId}`) {
+							window.history.replaceState(null, '', `/${sectionId}`)
+
 						}
 					}
 				})
@@ -54,9 +51,10 @@ const usePageEffects = sections => {
 		return () => {
 			observer.disconnect()
 		}
-	}, [navigate, hash])
+	}, [location.pathname])
 
 	return { windowWidth, sectionRefs }
 }
 
 export { usePageEffects }
+

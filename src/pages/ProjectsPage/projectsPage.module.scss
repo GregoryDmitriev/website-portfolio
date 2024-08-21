@@ -1,40 +1,21 @@
 @import '@/styles/index';
 
-.gearFull {
-	cursor: none;
-	position: absolute;
-	background: none !important;
-	width: 70rem;
-	height: 70rem;
-	left: -24rem;
-	top: -24.5rem;
-
-	@include respond(tab-land) {
-		width: 65rem;
-		height: 65rem;
-		left: -22rem;
-		top: -22.7rem;
-	}
-
-	@include respond(phone) {
-		width: 60rem;
-		height: 60rem;
-		left: -21rem;
-		top: -21.2rem;
-	}
-
-	@include respond(sm-phone) {
-		width: 45rem;
-		height: 45rem;
-		left: -17rem;
-		top: -15.8rem;
-	}
-}
-
 .container {
 	@include container;
 
 	position: relative;
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 30%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 30%,
+		rgba(0, 0, 0, 0) 100%
+	);
 
 	.projectsContainer {
 		@include display-flex;
@@ -61,11 +42,11 @@
 		height: 30rem;
 
 		&.dark {
-			background-color: $color-light-opacity-07;
+			background-color: $color-light-opacity;
 		}
 
 		&.light {
-			background-color: $color-dark-opacity-07;
+			background-color: $color-dark-opacity;
 		}
 
 		.projectsImg {
@@ -95,7 +76,7 @@
 	}
 
 	.title {
-		@include fontSuperbastone;
+		@include fontRaleway;
 
 		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
 		font-weight: 900;
@@ -124,16 +105,16 @@
 			cursor: auto;
 			transform: scaleX(-1);
 			position: relative;
-			left: -10rem;
-			width: 100%;
-			height: 100%;
+			left: clamp(-12rem, -12.667rem + 2.963vw, -10rem);
+			width: clamp(20rem, 15rem + 22.222vw, 35rem);
+			height: clamp(35rem, 30rem + 22.222vw, 50rem);
 
 			&.light {
 				fill: $color-dark-opacity;
 			}
 
 			&.dark {
-				fill: $color-light-opacity;
+				fill: $color-black;
 			}
 		}
 	}

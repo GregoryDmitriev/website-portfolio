@@ -2,6 +2,7 @@
 
 .themeButton {
 	@include display-flex;
+	@include fontRaleway;
 
 	cursor: pointer;
 	padding-left: 1rem;
@@ -9,15 +10,16 @@
 	border: none;
 	border-radius: 50%;
 
-	svg {
-		width: 1.6rem;
-		height: 1.6rem;
+	&.light {
+		color: $color-dark-opacity;
 	}
 
 	&.dark {
-		@include dark-theme;
+		color: $color-light-opacity;
 	}
-	&.light {
-		@include light-theme;
+
+	svg {
+		width: 1.3rem;
+		height: 1.3rem;
 	}
 }

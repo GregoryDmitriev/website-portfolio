@@ -2,12 +2,19 @@ import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import '@/styles/locomotive-scroll.scss'
 import Lenis from 'lenis'
 
 import styles from './app.module.scss'
-import '@/styles/locomotive-scroll.scss'
-import { Layout, Settings } from '../index'
-import { MainPage } from '@/pages'
+import {
+	AboutPage,
+	ContactPage,
+	HomePage,
+	MainPage,
+	ProjectsPage,
+	SkillsPage,
+} from '@/pages'
+import { Settings } from '@/components'
 import { ThemeProvider } from '@/providers'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -16,7 +23,7 @@ const App = () => {
 	const lenis = new Lenis()
 
 	useEffect(() => {
-		function raf(time) {
+		const raf = time => {
 			lenis.raf(time)
 			requestAnimationFrame(raf)
 		}
@@ -31,8 +38,12 @@ const App = () => {
 
 				<Router>
 					<Routes>
-						<Route path='/' element={<Layout />}>
-							<Route index element={<MainPage />} />
+						<Route path='/' element={<MainPage />}>
+							<Route path='home' element={<HomePage />} />
+							<Route path='about' element={<AboutPage />} />
+							<Route path='skills' element={<SkillsPage />} />
+							<Route path='projects' element={<ProjectsPage />} />
+							<Route path='contact' element={<ContactPage />} />
 						</Route>
 					</Routes>
 				</Router>

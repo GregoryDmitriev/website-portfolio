@@ -1,4 +1,4 @@
-import { FaHome, FaCode } from 'react-icons/fa'
+import { FaCode } from 'react-icons/fa'
 import { IoIosPerson } from 'react-icons/io'
 import { BsFillMortarboardFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
@@ -8,49 +8,44 @@ import { HiOutlineMail } from 'react-icons/hi'
 const NAV_LINKS = [
 	{
 		title: 'HOME',
-		to: '#home',
-		icon: <FaHome size={26} />,
+		to: 'home',
 	},
 	{
 		title: 'ABOUT',
-		to: '#about',
-		icon: <IoIosPerson size={26} />,
+		to: 'about',
 	},
 	{
 		title: 'SKILLS',
-		to: '#skills',
-		icon: <BsFillMortarboardFill size={26} />,
+		to: 'skills',
 	},
 	{
 		title: 'PROJECTS',
-		to: '#projects',
-		icon: <FaCode size={26} />,
+		to: 'projects',
 	},
 	{
 		title: 'CONTACT',
-		to: '#contact',
-		icon: <HiOutlineMail size={26} />,
+		to: 'contact',
 	},
 ]
 
 const NAV_LINKS_BURGER = [
 	{
-		to: '#about',
+		to: 'about',
 		icon: <IoIosPerson size={26} />,
 		transform: 'translate(0px,125px)',
 	},
 	{
-		to: '#skills',
+		to: 'skills',
 		icon: <BsFillMortarboardFill size={26} />,
 		transform: 'translate(60px,105px)',
 	},
 	{
-		to: '#projects',
+		to: 'projects',
 		icon: <FaCode size={26} />,
 		transform: 'translate(105px,60px)',
 	},
 	{
-		to: '#contact',
+		to: 'contact',
 		icon: <HiOutlineMail size={26} />,
 		transform: 'translate(125px,0px)',
 	},

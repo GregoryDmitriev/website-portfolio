@@ -8,17 +8,18 @@
 	border: none;
 	border-radius: 50%;
 
-	&.dark {
-		@include dark-theme;
-	}
 	&.light {
-		@include light-theme;
+		color: $color-dark-opacity;
+	}
+
+	&.dark {
+		color: $color-light-opacity;
 	}
 
 	p {
-		@include fontSuperbastone;
+		@include fontRaleway;
 
-		font-size: 1rem;
+		font-size: 0.8rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
 	}
