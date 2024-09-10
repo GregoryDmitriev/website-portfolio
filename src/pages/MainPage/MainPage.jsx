@@ -1,25 +1,20 @@
-import { useContext, useRef, useState, useEffect, lazy, Suspense } from 'react'
+import { useContext, useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import styles from './mainPage.module.scss'
-// import {
-// 	AboutPage,
-// 	HomePage,
-// 	ProjectsPage,
-// 	SkillsPage,
-// 	ContactPage,
-// } from '../index'
+import {
+	AboutPage,
+	HomePage,
+	ProjectsPage,
+	SkillsPage,
+	ContactPage,
+} from '../index'
 import { ThemeContext } from '@/providers'
 import { Burger, CustomCursor, Navigation } from '@/components'
 import { usePageEffects } from '@/hooks/usePageEffects'
 
-const HomePage = lazy(() => import('../HomePage/HomePage'))
-const AboutPage = lazy(() => import('../AboutPage/AboutPage'))
-const SkillsPage = lazy(() => import('../SkillsPage/SkillsPage'))
-const ProjectsPage = lazy(() => import('../ProjectsPage/ProjectsPage'))
-const ContactPage = lazy(() => import('../ContactPage/ContactPage'))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -41,6 +36,8 @@ const MainPage = () => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						const sectionId = entry.target.getAttribute('id')
+
+						console.log(`Intersecting section: ${sectionId}`) 
 
 						if (sectionId === 'home' || sectionId === 'about') {
 							setIsHeaderFixed(true)
@@ -89,7 +86,7 @@ const MainPage = () => {
 
 			{isMenuVisible && <Burger isMenuOpen={isMenuVisible} />}
 
-			<Suspense fallback={<div>Loading...</div>}>
+		
 				{sections.map((section, index) => (
 					<section key={section} id={section} ref={sectionRefs.current[index]}>
 						{index === 0 && <HomePage />}
@@ -99,7 +96,7 @@ const MainPage = () => {
 						{index === 4 && <ContactPage />}
 					</section>
 				))}
-			</Suspense>
+		
 		</main>
 	)
 }

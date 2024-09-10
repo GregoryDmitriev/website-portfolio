@@ -25,4 +25,4 @@ const SkillsPage = () => {
 	)
 }
 
-export default SkillsPage 
+export  {SkillsPage} 

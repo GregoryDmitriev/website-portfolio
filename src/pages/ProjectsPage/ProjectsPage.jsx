@@ -29,4 +29,4 @@ const ProjectsPage = () => {
 	)
 }
 
-export default ProjectsPage 
+export  {ProjectsPage} 
