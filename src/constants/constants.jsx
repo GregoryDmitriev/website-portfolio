@@ -30,7 +30,7 @@ const NAV_LINKS = [
 
 const NAV_LINKS_BURGER = [
 	{
-		to: 'about',
+		to: 'home',
 		icon: <IoIosPerson size={26} />,
 		transform: 'translate(0px,125px)',
 	},

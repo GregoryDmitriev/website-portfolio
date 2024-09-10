@@ -4,7 +4,6 @@
 	@include container;
 
 	position: relative;
-	overflow: hidden;
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	mask-image: linear-gradient(
@@ -22,7 +21,6 @@
 		@include display-flex;
 
 		position: absolute;
-		min-height: 30rem;
 		text-align: right;
 		padding: 0.8rem;
 		border-radius: 1.5rem;
@@ -50,18 +48,7 @@
 				letter-spacing: 0.2rem;
 				line-height: 8.375rem;
 				transition: all 0.5s ease-in-out;
-
-				&:hover {
-					color: $active-color;
-				}
-
-				&.light {
-					color: $color-dark-opacity;
-				}
-
-				&.dark {
-					color: $color-light-opacity;
-				}
+				color: $active-color;
 			}
 
 			span {

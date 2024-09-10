@@ -17,10 +17,6 @@
 		rgba(0, 0, 0, 0) 100%
 	);
 
-	.inkPen {
-		position: relative;
-		z-index: 10;
-	}
 
 	@keyframes draw-text {
 		0% {
@@ -33,33 +29,38 @@
 		}
 	}
 
-	h3 {
-		@include fontDancingScript;
-
-		cursor: pointer;
-		font-size: clamp(3rem, 2rem + 4.444vw, 6rem);
-		font-weight: 400;
-		letter-spacing: 0.1rem;
+	.openModalButton {
 		position: absolute;
-		z-index: 2;
-		top: 20%;
+		z-index: 1;
 		left: 50%;
-		transform: translate(-40%, -20%);
-		width: 80%;
+		transform: translate(-50%, -20%);
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+
+	.title {
+		width: clamp(22rem, 17.333rem + 20.741vw, 36rem);
+		height: clamp(16rem, 13.333rem + 11.852vw, 24rem);
+		transition: all 0.5s ease-in-out;
 
 		&.light {
-			color: $color-dark-opacity;
+			color: $color-dark;
 		}
 
 		&.dark {
-			color: $color-light-opacity;
+			color: $color-light;
+		}
+
+		&:hover {
+			fill: $active-color;
 		}
 	}
+
 	.heroContainer {
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		z-index: 1;
 		top: 0rem;
 		right: 0rem;
 
@@ -129,33 +130,20 @@
 		}
 	}
 
-	.buttonHome {
-		@include fontRaleway;
+	.modalWrapper {
+		@include display-flex;
 
-		font-size: 0.8rem;
-		font-weight: 300;
-		letter-spacing: 0.1rem;
-		transition: all 0.5s ease-in-out;
-		border: none;
-		background: none;
-		cursor: pointer;
+		width: 100%;
+		min-height: 100%;
 
 		position: absolute;
-		bottom: 2rem;
-		left: 4rem;
-		z-index: 2;
-		transform: translate(-50%, 0);
+		top: 0;
+		left: 0;
 
-		&.light {
-			color: $color-dark-opacity;
-		}
+		&.modalContent {
+			@include display-flex;
 
-		&.dark {
-			color: $color-light-opacity;
-		}
-
-		&:hover {
-			color: $active-color;
+			width: clamp(21.5rem, 23.7037vw + 16.1667rem, 37.5rem);
 		}
 	}
 }

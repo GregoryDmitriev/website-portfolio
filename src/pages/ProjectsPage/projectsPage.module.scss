@@ -17,6 +17,21 @@
 		rgba(0, 0, 0, 0) 100%
 	);
 
+	.title {
+		@include fontRaleway;
+
+		font-size: clamp(2.5rem, -2.6667rem + 22.963vw, 18rem);
+		font-weight: 900;
+		display: inline;
+
+		background: url('../../assets/images/bg_title-project.webp');
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		letter-spacing: 1rem;
+		z-index: 1;
+	}
+
 	.projectsContainer {
 		@include display-flex;
 
@@ -72,24 +87,6 @@
 				height: 100%;
 				object-fit: cover;
 			}
-		}
-	}
-
-	.title {
-		@include fontRaleway;
-
-		font-size: clamp(4.5rem, -5.143rem + 25.714vw, 18rem);
-		font-weight: 900;
-		display: inline;
-		z-index: 1;
-		letter-spacing: 1rem;
-
-		&.dark {
-			@include light-theme;
-		}
-
-		&.light {
-			@include dark-theme;
 		}
 	}
 

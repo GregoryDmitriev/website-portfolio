@@ -1,0 +1,64 @@
+@import '@/styles/index';
+
+form {
+	@include display-flex;
+
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+	width: 30rem;
+	height: 20rem;
+	border-radius: 1.5rem;
+	margin: 1rem;
+	padding: 0;
+	border: 0;
+	position: relative;
+
+	.name,
+	.email,
+	.message,
+	.button,
+	textarea {
+		@include fontRaleway;
+
+		width: clamp(20rem, 14.8148vw + 16.6667rem, 30rem);
+		padding: 0.5rem;
+		background: transparent;
+		border-radius: 1rem;
+		border: .2px solid $color-light-opacity;
+		transition: all 0.5s ease-in-out;
+		line-height: 1.5;
+		letter-spacing: 0.1rem;
+		color: $color-light;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			font-size: small;
+			color: $color-light-opacity;
+		}
+	}
+
+	textarea {
+		min-height: 5lh !important;
+		line-height: 1.5;
+		field-sizing: content;
+	}
+
+	.button {
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			font-weight: 900;
+			letter-spacing: 0.4rem;
+			transition: all 0.5s ease-in-out;
+		}
+	}
+}

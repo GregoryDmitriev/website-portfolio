@@ -17,14 +17,12 @@ const SkillsPage = () => {
 	useGSAP(() => {}, [])
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} >
 			<h2 className={`${styles.title} ${styleTheme}`} ref={titleRef}>
 				SKILLS
 			</h2>
-
-			
 		</div>
 	)
 }
 
-export { SkillsPage }
+export default SkillsPage 

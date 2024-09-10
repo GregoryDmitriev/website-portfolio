@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { TextPlugin } from 'gsap/TextPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import styles from './homePage.module.scss'
@@ -9,13 +10,15 @@ import { Icon } from '@/components/Icon'
 import { Navigation } from '@/components'
 import { useScreenSizeClass } from '@/hooks/useScreenSizeClass '
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(TextPlugin)
 
 const HomePage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	const titleRef = useRef(null)
+	const spanRef = useRef(null)
 
 	const screenSizeClass = useScreenSizeClass(styles)
 
@@ -23,13 +26,26 @@ const HomePage = () => {
 		gsap.fromTo(
 			titleRef.current,
 			{ scale: 0 },
-			{ scale: 1, duration: 2, ease: 'slow(.7, .7, false)' }
+			{ scale: 1, duration: 5, ease: 'slow(.7, .7, false)' }
 		)
+
+		gsap.fromTo(
+			spanRef.current,
+			{ scale: 0 },
+			{ scale: 1, duration: 1, ease: 'slow(.7, .7, false)' }
+		)
+
+		gsap.to(spanRef.current, {
+			duration: 4,
+			delay: 3,
+			text: {
+				value: 'Front-end developer',
+			},
+		})
 	}, [])
 
 	return (
 		<div className={styles.container}>
-			<Navigation />
 
 			<div className={styles.heroContainer}>
 				<div className={`${styles.heroBox} ${styleTheme} `}>
@@ -41,14 +57,16 @@ const HomePage = () => {
 				</div>
 			</div>
 
-			<div className={`${styles.titleContainer} ${styleTheme}`} ref={titleRef}>
+			<div className={styles.titleContainer} ref={titleRef}>
 				<div className={styles.titleText}>
 					<h1>Gregory Dmitriev</h1>
-					<span className={styleTheme}>Front-end developer</span>
+					<span className={styleTheme} ref={spanRef}>
+						HTML CSS JavaScript React
+					</span>
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export { HomePage }
+export default HomePage 

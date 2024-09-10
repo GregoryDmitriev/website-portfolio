@@ -26,7 +26,7 @@ const Burger = () => {
 				const [uniqueId] = useId()
 				return (
 					<div
-						key={uniqueId}
+						key={uniqueId + index}
 						className={`${styles[`item${index + 1}`]} ${styleTheme}`}
 						style={{
 							transform: activeStates[link.id] ? 'none' : link.transform,

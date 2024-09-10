@@ -2,6 +2,7 @@
 
 .container {
 	@include container;
+	
 
 	h2 {
 		@include fontRaleway;

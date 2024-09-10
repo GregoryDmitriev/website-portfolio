@@ -42,8 +42,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 	position: relative;
-	scroll-behavior: smooth;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 body {
@@ -101,6 +100,9 @@ li:hover {
 img {
 	border: 0; /* 1 */
 	-ms-interpolation-mode: bicubic; /* 2 */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 form {
@@ -136,6 +138,10 @@ button::-moz-focus-inner {
 	padding: 0;
 }
 
+button {
+	cursor: pointer;
+}
+
 textarea {
 	overflow: auto; /* 1 */
 	vertical-align: top; /* 2 */
@@ -149,7 +155,14 @@ textarea {
 	color: #222;
 }
 
- audio, canvas, iframe, img, svg, video, picture, figure {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+picture,
+figure {
 	vertical-align: middle;
 }
 

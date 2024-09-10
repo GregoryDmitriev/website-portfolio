@@ -3,8 +3,6 @@
 .app {
 	@include display-flex;
 
-	overflow: hidden;
-
 	section {
 		@include section;
 

@@ -3,8 +3,42 @@
 .container {
 	@include container;
 
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	mask-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 1) 100%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 1) 100%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
+	&.dark {
+		@include dark-theme;
+	}
+	&.light {
+		@include light-theme;
+	}
 
 	.wrap {
 		@include display-flex;
+
+		flex-direction: column;
+		border-radius: 1.5rem;
+		padding: 1rem;
+
+		&.dark {
+			@include dark-theme;
+		}
+		&.light {
+			@include light-theme;
+		}
+
+		div > * {
+			margin: 3rem 0;
+		}
 	}
 }

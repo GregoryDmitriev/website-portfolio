@@ -5,9 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import styles from './aboutPage.module.scss'
 import { ThemeContext } from '@/providers'
-import { Icon } from '@/components/Icon'
-import img_1 from '@/assets/images/scribbleOne.webp'
-import img_2 from '@/assets/images/scribbleTwo.webp'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,10 +13,46 @@ const AboutPage = () => {
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	return (
-		<div className={styles.container} style={{ backgroundColor: '#a170794a' }}>
-			ABOUT
+		<div className={`${styles.container} ${styleTheme} `}>
+			<div className={`${styles.wrap} ${styleTheme} `}>
+				<div>
+					<p>
+						Hello! I am a Front-end developer. I am currently learning React and
+						JavaScript. I am passionate about creating beautiful and
+						user-friendly websites.
+					</p>
+				</div>
+				<div>
+					<p>
+						Hello! I am a Front-end developer. I am currently learning React and
+						JavaScript. I am passionate about creating beautiful and
+						user-friendly websites.
+					</p>
+				</div>
+				<div>
+					<p>
+						Hello! I am a Front-end developer. I am currently learning React and
+						JavaScript. I am passionate about creating beautiful and
+						user-friendly websites.
+					</p>
+				</div>
+				<div>
+					<p>
+						Hello! I am a Front-end developer. I am currently learning React and
+						JavaScript. I am passionate about creating beautiful and
+						user-friendly websites.
+					</p>
+				</div>
+				<div>
+					<p>
+						Hello! I am a Front-end developer. I am currently learning React and
+						JavaScript. I am passionate about creating beautiful and
+						user-friendly websites.
+					</p>
+				</div>
+			</div>
 		</div>
 	)
 }
 
-export { AboutPage }
+export default AboutPage 

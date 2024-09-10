@@ -16,7 +16,7 @@ const ProjectsPage = () => {
 
 	return (
 		<div className={styles.container}>
-			{/* <h2 className={`${styles.title} ${styleTheme} `}>PROJECTS</h2> */}
+			<h2 className={`${styles.title} ${styleTheme} `}>PROJECTS</h2>
 
 			<div className={styles.silhouetteContainer}>
 				<Icon
@@ -29,4 +29,4 @@ const ProjectsPage = () => {
 	)
 }
 
-export { ProjectsPage }
+export default ProjectsPage 
