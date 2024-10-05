@@ -1,0 +1,59 @@
+@import '@/styles/index';
+
+.container {
+	@include container;
+
+	height: 90%;
+
+	.swiper {
+		width: 100%;
+		height: 100%;
+	}
+
+	.swiperSlide {
+		@include display-flex;
+
+		text-align: center;
+		background-size: cover;
+		background-position: center;
+
+		.swiperSlideContent {
+			@include display-flex;
+
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2rem;
+
+			width: min(40rem, 90vw);
+			padding: 2rem;
+			border-radius: $border-radius;
+			backdrop-filter: blur(5px);
+
+			font-weight: 600;
+			text-align: start;
+			line-height: 1.2;
+			color: $color-light;
+			background-color: $color-black;
+
+
+			.linkClose {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				z-index: 10;
+
+				svg {
+					height: 2rem;
+					width: 2rem;
+					fill: $color-light;
+				}
+			}
+
+			.linksView {
+				@include display-flex;
+
+				gap: 2rem;
+			}
+		}
+	}
+}

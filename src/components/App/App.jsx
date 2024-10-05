@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -17,20 +17,21 @@ import {
 	ProjectsPage,
 	SkillsPage,
 } from '@/pages'
+import { ProjectItem } from '@/pages/ProjectsPage/ProjectItem'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const App = () => {
-	const lenis = new Lenis()
+	const lenis = useRef(new Lenis())
 
 	useEffect(() => {
 		const raf = time => {
-			lenis.raf(time)
+			lenis.current.raf(time)
 			requestAnimationFrame(raf)
 		}
 
 		requestAnimationFrame(raf)
-	}, [lenis.raf])
+	}, [])
 
 	return (
 		<ThemeProvider>
@@ -42,7 +43,7 @@ const App = () => {
 							<Route path='home' element={<HomePage />} />
 							<Route path='about' element={<AboutPage />} />
 							<Route path='skills' element={<SkillsPage />} />
-							<Route path='projects' element={<ProjectsPage />} />
+							<Route path='projects' element={<ProjectsPage />}/>
 							<Route path='contact' element={<ContactPage />} />
 						</Route>
 					</Routes>

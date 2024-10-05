@@ -4,30 +4,8 @@
 	@include container;
 
 	padding: 0;
-
-	backdrop-filter: blur(5px);
-	mask-image: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
-	-webkit-mask-image: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
-
-
-	@keyframes draw-text {
-		0% {
-			stroke-dasharray: 0, 100;
-			stroke-dashoffset: 0;
-		}
-		100% {
-			stroke-dasharray: 100, 0;
-			stroke-dashoffset: 0;
-		}
-	}
+	position: relative;
+	z-index: 2;
 
 	.openModalButton {
 		position: absolute;
@@ -40,6 +18,8 @@
 	}
 
 	.title {
+		@include backdrop-blur-mask;
+
 		width: clamp(22rem, 17.333rem + 20.741vw, 36rem);
 		height: clamp(16rem, 13.333rem + 11.852vw, 24rem);
 		transition: all 0.5s ease-in-out;
@@ -58,23 +38,13 @@
 	}
 
 	.heroContainer {
+		@include backdrop-blur-mask;
+
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		top: 0rem;
 		right: 0rem;
-
-		backdrop-filter: blur(5px);
-		mask-image: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 1) 30%,
-			rgba(0, 0, 0, 0) 100%
-		);
-		-webkit-mask-image: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 1) 30%,
-			rgba(0, 0, 0, 0) 100%
-		);
 
 		.heroContact {
 			opacity: 1;
@@ -144,6 +114,48 @@
 			@include display-flex;
 
 			width: clamp(21.5rem, 23.7037vw + 16.1667rem, 37.5rem);
+		}
+	}
+
+	.social {
+		@include display-flex;
+		@include backdrop-blur-mask;
+
+		gap: 1.2rem;
+		width: 12rem;
+		height: 6rem;
+		position: fixed;
+		z-index: 20;
+		bottom: 0;
+		left: 0;
+		backdrop-filter: blur(5px);
+
+		border-top-right-radius: $border-radius;
+
+		&.light {
+			background: $color-dark;
+		}
+		&.dark {
+			background: $color-light;
+		}
+
+		.socialIcon {
+			width: 2rem;
+			height: 2rem;
+
+			&.light {
+				fill: $color-light;
+			}
+
+			&.dark {
+				fill: $color-dark;
+			}
+
+			&:hover {
+				transform: translateY(-0.5rem);
+				transition: all 0.3s ease-in-out;
+				fill: $active-color;
+			}
 		}
 	}
 }

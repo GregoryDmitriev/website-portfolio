@@ -2,34 +2,101 @@
 
 .container {
 	@include container;
+	@include backdrop-blur-mask;
 
-	position: relative;
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	mask-image: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
-	-webkit-mask-image: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	span {
+		font-size: clamp(1rem, 0.333rem + 2.963vw, 3rem);
+		font-weight: 900;
+		color: $active-color;
+
+		position: relative;
+		z-index: 2;
+		top: clamp(0rem, -1.333rem + 5.926vw, 4rem);
+		left: clamp(0rem, -0.333rem + 1.481vw, 1rem);
+		rotate: -4deg;
+		opacity: 1;
+		transition: opacity 0.5s ease;
+
+		@media screen and (max-height: 430px) {
+			top: 3rem;
+		}
+	}
+
+	&:hover > span {
+		opacity: 0;
+
+		&.light {
+			color: $color-light;
+		}
+
+		&.dark {
+			color: $color-dark;
+		}
+	}
 
 	.title {
 		@include fontRaleway;
 
-		font-size: clamp(2.5rem, -2.6667rem + 22.963vw, 18rem);
+		font-size: clamp(2.5rem, -2.6667rem + 20.963vw, 18rem);
 		font-weight: 900;
-		display: inline;
-
-		background: url('../../assets/images/bg_title-project.webp');
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
-		letter-spacing: 1rem;
+		letter-spacing: 0.2rem;
 		z-index: 1;
+		transition: all 0.5s ease-in-out;
+
+		border: none;
+		background: none;
+		cursor: pointer;
+
+		&.light {
+			text-shadow: 0.063rem 0.063rem 0 $color-light-opacity,
+				0.125rem 0.125rem 0 $color-light-opacity,
+				0.188rem 0.188rem 0 $color-light-opacity,
+				0.25rem 0.25rem 0 $color-light-opacity,
+				0.25rem 0.25rem 15px $color-light-opacity,
+				0.25rem 0.25rem 0.313rem $color-dark;
+
+			&:hover {
+				margin: 4.375rem 6.875rem 5rem 5.625rem;
+				text-shadow: 0.063rem 0.063rem 0 $color-light-opacity,
+					0.125rem 0.125rem $color-light-opacity,
+					0.188rem 0.188rem 0 $color-light-opacity,
+					0.25rem 0.25rem 0 $color-dark-opacity,
+					0.813rem 0.813rem 2.188rem $color-dark-opacity,
+					0.813rem 0.813rem 1.25rem $color-dark;
+			}
+		}
+
+		&.dark {
+			text-shadow: 0.063rem 0.063rem 0 $color-dark-opacity,
+				0.125rem 0.125rem 0 $color-dark-opacity,
+				0.188rem 0.188rem 0 $color-dark-opacity,
+				0.25rem 0.25rem 0 $color-dark-opacity,
+				0.25rem 0.25rem 15px $color-dark-opacity,
+				0.25rem 0.25rem 0.313rem $color-light;
+
+			&:hover {
+				margin: 4.375rem 6.875rem 5rem 5.625rem;
+				text-shadow: 0.063rem 0.063rem 0 $color-dark-opacity,
+					0.125rem 0.125rem $color-dark-opacity,
+					0.188rem 0.188rem 0 $color-dark-opacity,
+					0.25rem 0.25rem 0 $color-light-opacity,
+					0.813rem 0.813rem 2.188rem $color-light-opacity,
+					0.813rem 0.813rem 1.25rem $color-light-opacity;
+			}
+		}
+
+		-moz-transform: scale(1) rotate(0deg) translate(0rem, 0rem)
+			skew(-5deg, -5deg);
+		-webkit-transform: scale(1) rotate(0deg) translate(0rem, 0rem)
+			skew(-5deg, -5deg);
+		-o-transform: scale(1) rotate(0deg) translate(0rem, 0rem) skew(-5deg, -5deg);
+		-ms-transform: scale(1) rotate(0deg) translate(0rem, 0rem)
+			skew(-5deg, -5deg);
+		transform: scale(1) rotate(0deg) translate(0rem, 0rem) skew(-5deg, -5deg);
+		-webkit-transition: all 500ms ease-in-out;
+		-moz-transition: all 500ms ease-in-out;
+		-o-transition: all 500ms ease-in-out;
+		transition: all 500ms ease-in-out;
 	}
 
 	.projectsContainer {
@@ -50,6 +117,28 @@
 		}
 	}
 
+	.projectContainer {
+		@include display-flex;
+
+		width: 110vw;
+		height: 110vh;
+		border-radius: $border-radius;
+
+		position: absolute;
+		z-index: 11;
+		overflow: hidden;
+		background-color: $color-black;
+
+		&.dark {
+			background-color: $color-light-opacity;
+		}
+
+		&.light {
+			background-color: $color-dark-opacity;
+		}
+
+	}
+
 	.projectsItem {
 		@include display-flex;
 
@@ -63,31 +152,6 @@
 		&.light {
 			background-color: $color-dark-opacity;
 		}
-
-		.projectsImg {
-			width: 20rem;
-			height: 30rem;
-
-			&.dark {
-				background-color: $color-light;
-				border: 0.4rem solid $color-dark-opacity;
-			}
-
-			&.light {
-				background-color: $color-dark;
-				border: 0.4rem solid $color-light-opacity;
-			}
-
-			&:nth-child(2) {
-				margin: 0rem 1rem;
-			}
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
 	}
 
 	.silhouetteContainer {
@@ -99,12 +163,17 @@
 		left: 0;
 
 		.silhouette {
-			cursor: auto;
+			cursor: none;
 			transform: scaleX(-1);
+			transition: all 0.5s ease-in-out;
 			position: relative;
 			left: clamp(-12rem, -12.667rem + 2.963vw, -10rem);
 			width: clamp(20rem, 15rem + 22.222vw, 35rem);
 			height: clamp(35rem, 30rem + 22.222vw, 50rem);
+
+			@media screen and (max-height: 430px) {
+				height: clamp(20rem, 10rem + 44.444vw, 50rem);
+			}
 
 			&.light {
 				fill: $color-dark-opacity;

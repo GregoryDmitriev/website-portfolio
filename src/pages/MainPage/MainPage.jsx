@@ -1,7 +1,4 @@
-import { useContext, useRef, useState, useEffect } from 'react'
-import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useContext, useState, useEffect } from 'react'
 
 import styles from './mainPage.module.scss'
 import {
@@ -15,17 +12,12 @@ import { ThemeContext } from '@/providers'
 import { Burger, CustomCursor, Navigation } from '@/components'
 import { usePageEffects } from '@/hooks/usePageEffects'
 
-
-gsap.registerPlugin(ScrollTrigger)
-
 const MainPage = () => {
 	const [theme] = useContext(ThemeContext)
 	const styleTheme = theme === 'light' ? styles.light : styles.dark
 
 	const sections = ['home', 'about', 'skills', 'projects', 'contact']
 	const { windowWidth, sectionRefs } = usePageEffects(sections)
-
-	const ref = useRef()
 
 	const [isMenuVisible, setIsMenuVisible] = useState(false)
 	const [isHeaderFixed, setIsHeaderFixed] = useState(true)
@@ -37,15 +29,13 @@ const MainPage = () => {
 					if (entry.isIntersecting) {
 						const sectionId = entry.target.getAttribute('id')
 
-						console.log(`Intersecting section: ${sectionId}`) 
-
-						if (sectionId === 'home' || sectionId === 'about') {
+						if (sectionId === 'home') {
 							setIsHeaderFixed(true)
 						} else {
 							setIsHeaderFixed(false)
 						}
 
-						if (sectionId === 'home' || sectionId === 'about') {
+						if (sectionId === 'home' && 'about') {
 							setIsMenuVisible(false)
 						} else {
 							setIsMenuVisible(true)
@@ -71,7 +61,6 @@ const MainPage = () => {
 		}
 	}, [sectionRefs])
 
-	
 	return (
 		<main className={`${styles.main} ${styleTheme}`}>
 			{windowWidth >= 900 && <CustomCursor />}
@@ -86,17 +75,15 @@ const MainPage = () => {
 
 			{isMenuVisible && <Burger isMenuOpen={isMenuVisible} />}
 
-		
-				{sections.map((section, index) => (
-					<section key={section} id={section} ref={sectionRefs.current[index]}>
-						{index === 0 && <HomePage />}
-						{index === 1 && <AboutPage />}
-						{index === 2 && <SkillsPage />}
-						{index === 3 && <ProjectsPage />}
-						{index === 4 && <ContactPage />}
-					</section>
-				))}
-		
+			{sections.map((section, index) => (
+				<section key={section} id={section} ref={sectionRefs.current[index]}>
+					{index === 0 && <HomePage />}
+					{index === 1 && <AboutPage />}
+					{index === 2 && <SkillsPage />}
+					{index === 3 && <ProjectsPage />}
+					{index === 4 && <ContactPage />}
+				</section>
+			))}
 		</main>
 	)
 }

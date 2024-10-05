@@ -2,30 +2,13 @@
 
 .container {
 	@include container;
-
-	position: relative;
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	mask-image: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
-	-webkit-mask-image: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	@include backdrop-blur-mask;
 
 	.titleContainer {
 		@include display-flex;
 
 		position: absolute;
 		text-align: right;
-		padding: 0.8rem;
-		border-radius: 1.5rem;
-		backdrop-filter: blur(5px);
-		-webkit-backdrop-filter: blur(5px);
 
 		&.light {
 			background-color: $color-light-opacity;
@@ -44,11 +27,12 @@
 				@include fontDancingScript;
 
 				font-size: clamp(2rem, 0rem + 8.889vw, 8rem);
-				font-weight: 500;
-				letter-spacing: 0.2rem;
-				line-height: 8.375rem;
-				transition: all 0.5s ease-in-out;
+				font-weight: 900;
+				letter-spacing: 0.4rem;
+				padding: 1rem 0;
 				color: $active-color;
+
+				transition: transform 0.5s;
 			}
 
 			span {
@@ -77,22 +61,12 @@
 
 		justify-content: flex-start;
 		width: 100%;
-		cursor: auto;
+		cursor: none;
 
 		.heroBox {
+			@include backdrop-blur-radial-mask;
+
 			transform: translate(-20%, 0%);
-			backdrop-filter: blur(5px);
-			-webkit-backdrop-filter: blur(5px);
-			mask-image: radial-gradient(
-				circle,
-				rgba(0, 0, 0, 1) 0%,
-				rgba(0, 0, 0, 0) 70%
-			);
-			-webkit-mask-image: radial-gradient(
-				circle,
-				rgba(0, 0, 0, 1) 0%,
-				rgba(0, 0, 0, 0) 38%
-			);
 
 			@include respond(tab-port) {
 				transform: translate(-28%, 0%);
@@ -100,7 +74,7 @@
 		}
 
 		.heroItem {
-			cursor: auto;
+			cursor: none;
 			width: clamp(40rem, 33rem + 31.111vw, 61rem);
 			height: clamp(44rem, 37rem + 31.111vw, 65rem);
 

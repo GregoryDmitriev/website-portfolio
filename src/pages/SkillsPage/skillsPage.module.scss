@@ -2,7 +2,6 @@
 
 .container {
 	@include container;
-	
 
 	h2 {
 		@include fontRaleway;
@@ -12,12 +11,34 @@
 		display: inline;
 		letter-spacing: 1rem;
 
-		&.dark {
-			@include dark-theme;
-		}
+		text-shadow: 10px 9px 4px rgba(0, 0, 0, 0.6);
 
 		&.light {
-			@include light-theme;
+			background: linear-gradient(
+				90deg,
+				rgba(0, 123, 255, 1) 0%,
+				rgba(61, 61, 61, 1) 35%,
+				rgba(0, 123, 255, 1) 100%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+
+			text-shadow: .8rem .6rem .4rem $color-dark-opacity;
+		}
+
+		&.dark {
+			background: linear-gradient(
+				90deg,
+				rgba(0, 123, 255, 1) 0%,
+				rgba(248, 249, 250, 1) 35%,
+				rgba(0, 123, 255, 1) 100%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+
+			text-shadow: .8rem .6rem .4rem $color-light-opacity;
 		}
 	}
 }

@@ -3,7 +3,9 @@ import { IoIosPerson } from 'react-icons/io'
 import { BsFillMortarboardFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
-// import projectImg from ''
+import projectImg1 from '@/assets/images/img1.webp'
+import projectImg2 from '@/assets/images/img2.webp'
+import projectImg3 from '@/assets/images/img3.webp'
 
 const NAV_LINKS = [
 	{
@@ -51,22 +53,39 @@ const NAV_LINKS_BURGER = [
 	},
 ]
 
-const PROJECTS = [
+const ABOUT_CONTENT = [
 	{
-		title: 'Project 1',
-		// img: projectImg,
-		id: '1',
+		text: 'Hello! I am a Front-end developer. I am currently learning React and JavaScript. I am passionate about creating beautiful and user-friendly websites.',
 	},
 	{
-		title: 'Project 2',
-		// img: projectImg,
-		id: '2',
-	},
-	{
-		title: 'Project 3',
-		// img: projectImg,
-		id: '3',
+		text: 'Hello! I am a Front-end developer. I am currently learning React and JavaScript. I am passionate about creating beautiful and user-friendly websites.',
 	},
 ]
 
-export { NAV_LINKS, NAV_LINKS_BURGER, PROJECTS }
+const PROJECTS = [
+	{
+		title: 'Project 1',
+		img: projectImg1,
+		id: '1',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	},
+	{
+		title: 'Project 2',
+		img: projectImg2,
+		id: '2',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	},
+	{
+		title: 'Project 3',
+		img: projectImg3,
+		id: '3',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	},
+]
+
+const LINK_GITHUB = 'https://github.com/GregoryDmitriev'
+
+export { NAV_LINKS, NAV_LINKS_BURGER, ABOUT_CONTENT, PROJECTS, LINK_GITHUB }

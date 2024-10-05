@@ -23,6 +23,7 @@ form {
 
 		width: clamp(20rem, 14.8148vw + 16.6667rem, 30rem);
 		padding: 0.5rem;
+		outline: none;
 		background: transparent;
 		border-radius: 1rem;
 		border: .2px solid $color-light-opacity;
