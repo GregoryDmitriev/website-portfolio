@@ -13,11 +13,11 @@ import {
 	AboutPage,
 	ContactPage,
 	HomePage,
+	Loader,
 	MainPage,
 	ProjectsPage,
 	SkillsPage,
 } from '@/pages'
-import { ProjectItem } from '@/pages/ProjectsPage/ProjectItem'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -37,13 +37,14 @@ const App = () => {
 		<ThemeProvider>
 			<div className={styles.app}>
 				<Settings />
+				<Loader />
 				<Router>
 					<Routes>
 						<Route path='/' element={<MainPage />}>
 							<Route path='home' element={<HomePage />} />
 							<Route path='about' element={<AboutPage />} />
 							<Route path='skills' element={<SkillsPage />} />
-							<Route path='projects' element={<ProjectsPage />}/>
+							<Route path='projects' element={<ProjectsPage />} />
 							<Route path='contact' element={<ContactPage />} />
 						</Route>
 					</Routes>
