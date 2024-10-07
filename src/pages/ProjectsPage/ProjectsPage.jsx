@@ -93,7 +93,7 @@ const ProjectsPage = () => {
 					className={`${styles.projectContainer} ${styleTheme}`}
 					ref={projectContainerRef}
 				>
-					<ProjectItem />
+					<ProjectItem setIsProjectsWindowOpen={setIsProjectsWindowOpen}/>
 				</div>
 			)}
 		</div>
