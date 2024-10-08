@@ -37,7 +37,7 @@ const App = () => {
 		<ThemeProvider>
 			<div className={styles.app}>
 				<Settings />
-				<Loader />
+				{/* <Loader /> */}
 				<Router>
 					<Routes>
 						<Route path='/' element={<MainPage />}>
